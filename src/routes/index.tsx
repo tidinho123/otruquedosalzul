@@ -389,12 +389,12 @@ function Index() {
               Estude no seu ritmo, em qualquer dispositivo, quantas vezes quiser.
             </p>
 
-            <a
-              href={CHECKOUT_URL}
-              className="btn-cta mt-8 inline-flex items-center justify-center gap-2 rounded-xl bg-gradient-to-b from-[#3ab9ff] to-[#0077ff] px-10 py-4 text-lg font-extrabold tracking-wide text-white transition-transform hover:scale-[1.03]"
-            >
-              QUERO ACESSAR AGORA
-            </a>
+            {revealed && (
+              <div className="mt-8 flex justify-center">
+                <OfferBlock remaining={remaining} size="lg" />
+              </div>
+            )}
+
           </div>
         </div>
       </section>
