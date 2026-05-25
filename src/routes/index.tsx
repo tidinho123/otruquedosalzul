@@ -260,15 +260,11 @@ function Index() {
             <span className="text-white font-semibold">desenvolvimento masculino</span>.
           </p>
 
-          <div className="mt-8 flex justify-center fade-in-up">
-            <a
-              href={CHECKOUT_URL}
-              className="btn-cta inline-flex items-center justify-center gap-2 rounded-xl bg-gradient-to-b from-[#3ab9ff] to-[#0077ff] px-8 py-4 text-base md:text-lg font-bold tracking-wide text-white transition-transform hover:scale-[1.03]"
-            >
-              <Sparkles className="size-5" />
-              QUERO ACESSAR AGORA
-            </a>
-          </div>
+          {revealed && (
+            <div className="mt-10 flex justify-center">
+              <OfferBlock remaining={remaining} size="md" />
+            </div>
+          )}
 
           <div className="mt-5 flex items-center justify-center gap-4 text-xs text-slate-400">
             <span className="inline-flex items-center gap-1.5"><Lock className="size-3.5" /> Compra Segura</span>
@@ -276,6 +272,7 @@ function Index() {
             <span className="inline-flex items-center gap-1.5"><ShieldCheck className="size-3.5" /> Entrega Imediata</span>
           </div>
         </div>
+
 
         {/* VSL */}
         <div className="relative z-10 max-w-3xl mx-auto px-5 pb-20 md:pb-28">
