@@ -11,7 +11,77 @@ import {
   Star,
   Lock,
   Zap,
+  Clock,
 } from "lucide-react";
+
+const REVEAL_DELAY_MS = 6 * 60 * 1000; // 6 min
+const OFFER_DURATION_MS = 10 * 60 * 1000; // 10 min
+
+function useOfferReveal() {
+  const [revealed, setRevealed] = useState(false);
+  const [revealAt, setRevealAt] = useState<number | null>(null);
+  const [now, setNow] = useState(() => Date.now());
+
+  useEffect(() => {
+    const t = setTimeout(() => {
+      setRevealed(true);
+      setRevealAt(Date.now());
+    }, REVEAL_DELAY_MS);
+    return () => clearTimeout(t);
+  }, []);
+
+  useEffect(() => {
+    if (!revealed) return;
+    const i = setInterval(() => setNow(Date.now()), 1000);
+    return () => clearInterval(i);
+  }, [revealed]);
+
+  const remaining = revealAt ? Math.max(0, OFFER_DURATION_MS - (now - revealAt)) : OFFER_DURATION_MS;
+  return { revealed, remaining };
+}
+
+function formatMMSS(ms: number) {
+  const total = Math.floor(ms / 1000);
+  const m = Math.floor(total / 60).toString().padStart(2, "0");
+  const s = (total % 60).toString().padStart(2, "0");
+  return `${m}:${s}`;
+}
+
+function OfferBlock({ remaining, size = "lg" }: { remaining: number; size?: "lg" | "md" }) {
+  const expired = remaining <= 0;
+  return (
+    <div className="fade-in-up mt-2 flex flex-col items-center gap-4 w-full">
+      <div className="flex items-baseline gap-3">
+        <span className="text-sm md:text-base text-slate-400 line-through">de 9.000 Kz</span>
+        <span className="text-3xl md:text-4xl font-extrabold text-white glow-text">
+          por <span className="text-[#3ab9ff]">4.989 Kz</span>
+        </span>
+      </div>
+
+      <div className="inline-flex items-center gap-2 rounded-xl border border-[#3ab9ff]/40 bg-[#0a0f1f]/80 backdrop-blur px-4 py-2 text-sm md:text-base">
+        <Clock className="size-4 text-[#3ab9ff]" />
+        <span className="text-slate-300">A oferta termina em</span>
+        <span className="font-mono font-bold text-[#3ab9ff] tabular-nums tracking-wider text-lg">
+          {formatMMSS(remaining)}
+        </span>
+      </div>
+
+      <a
+        href={expired ? "#" : CHECKOUT_URL}
+        aria-disabled={expired}
+        className={`btn-cta inline-flex items-center justify-center gap-2 rounded-xl bg-gradient-to-b from-[#3ab9ff] to-[#0077ff] text-white font-extrabold tracking-wide transition-transform hover:scale-[1.03] ${
+          size === "lg" ? "px-10 py-5 text-lg md:text-xl" : "px-8 py-4 text-base md:text-lg"
+        } ${expired ? "opacity-60 pointer-events-none" : ""}`}
+      >
+        <Sparkles className="size-5" />
+        {expired ? "OFERTA ENCERRADA" : "QUERO ACESSAR AGORA"}
+      </a>
+      {!expired && (
+        <p className="text-xs text-slate-400">Acesso imediato • Pagamento seguro</p>
+      )}
+    </div>
+  );
+}
 
 export const Route = createFileRoute("/")({
   component: Index,
