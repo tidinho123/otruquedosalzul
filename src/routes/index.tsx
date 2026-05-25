@@ -229,6 +229,8 @@ const depoimentos = [
 ];
 
 function Index() {
+  const { revealed, remaining } = useOfferReveal();
+
   return (
     <div className="relative min-h-screen overflow-x-hidden bg-[#04060d] text-slate-100">
       <LiveNotifications />
