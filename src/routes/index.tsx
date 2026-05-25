@@ -290,15 +290,12 @@ function Index() {
             </div>
           </div>
 
-          <div className="mt-8 flex flex-col items-center gap-3">
-            <a
-              href={CHECKOUT_URL}
-              className="btn-cta inline-flex items-center justify-center gap-2 rounded-xl bg-gradient-to-b from-[#3ab9ff] to-[#0077ff] px-10 py-5 text-lg md:text-xl font-extrabold tracking-wide text-white transition-transform hover:scale-[1.03]"
-            >
-              QUERO ACESSAR AGORA
-            </a>
-            <p className="text-xs text-slate-400">Acesso vitalício • Conteúdo 100% digital</p>
-          </div>
+          {revealed && (
+            <div className="mt-10 flex justify-center">
+              <OfferBlock remaining={remaining} size="lg" />
+            </div>
+          )}
+
         </div>
       </section>
 
