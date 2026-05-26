@@ -97,7 +97,7 @@ export const Route = createFileRoute("/")({
   }),
 });
 
-const CHECKOUT_URL = "#CHECKOUT";
+const CHECKOUT_URL = "https://pay.kumbipay.com/859c785f-35cb-43d4-b6a6-443d77653bb7";
 
 const NOMES = [
   "João", "Carlos", "Mateus", "Pedro", "André", "Lucas", "Miguel",
