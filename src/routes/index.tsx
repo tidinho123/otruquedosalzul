@@ -1,5 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { useEffect, useMemo, useState } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
+import Player from "@vimeo/player";
 import {
   ShieldCheck,
   Sparkles,
@@ -14,21 +15,20 @@ import {
   Clock,
 } from "lucide-react";
 
-const REVEAL_DELAY_MS = 6 * 60 * 1000; // 6 min
 const OFFER_DURATION_MS = 10 * 60 * 1000; // 10 min
+const REVEAL_BEFORE_END_SEC = 20; // mostrar CTA 20s antes do fim da VSL
 
-function useOfferReveal() {
+function useOfferReveal(triggerReveal: boolean) {
   const [revealed, setRevealed] = useState(false);
   const [revealAt, setRevealAt] = useState<number | null>(null);
   const [now, setNow] = useState(() => Date.now());
 
   useEffect(() => {
-    const t = setTimeout(() => {
+    if (triggerReveal && !revealed) {
       setRevealed(true);
       setRevealAt(Date.now());
-    }, REVEAL_DELAY_MS);
-    return () => clearTimeout(t);
-  }, []);
+    }
+  }, [triggerReveal, revealed]);
 
   useEffect(() => {
     if (!revealed) return;
@@ -54,7 +54,7 @@ function OfferBlock({ remaining, size = "lg" }: { remaining: number; size?: "lg"
       <div className="flex items-baseline gap-3">
         <span className="text-sm md:text-base text-slate-400 line-through">de 9.000 Kz</span>
         <span className="text-3xl md:text-4xl font-extrabold text-white glow-text">
-          por <span className="text-[#3ab9ff]">4.989 Kz</span>
+          por <span className="text-[#3ab9ff]">5.000 Kz</span>
         </span>
       </div>
 
@@ -97,7 +97,7 @@ export const Route = createFileRoute("/")({
   }),
 });
 
-const CHECKOUT_URL = "#CHECKOUT";
+const CHECKOUT_URL = "https://pay.kumbipay.com/859c785f-35cb-43d4-b6a6-443d77653bb7";
 
 const NOMES = [
   "João", "Carlos", "Mateus", "Pedro", "André", "Lucas", "Miguel",
@@ -229,7 +229,27 @@ const depoimentos = [
 ];
 
 function Index() {
-  const { revealed, remaining } = useOfferReveal();
+  const [shouldReveal, setShouldReveal] = useState(false);
+  const { revealed, remaining } = useOfferReveal(shouldReveal);
+  const iframeRef = useRef<HTMLIFrameElement | null>(null);
+
+  useEffect(() => {
+    if (!iframeRef.current) return;
+    const player = new Player(iframeRef.current);
+    const onTime = (data: { seconds: number; duration: number }) => {
+      if (data.duration > 0 && data.duration - data.seconds <= REVEAL_BEFORE_END_SEC) {
+        setShouldReveal(true);
+      }
+    };
+    const onEnd = () => setShouldReveal(true);
+    player.on("timeupdate", onTime);
+    player.on("ended", onEnd);
+    return () => {
+      player.off("timeupdate", onTime);
+      player.off("ended", onEnd);
+      player.destroy().catch(() => {});
+    };
+  }, []);
 
   return (
     <div className="relative min-h-screen overflow-x-hidden bg-[#04060d] text-slate-100">
@@ -260,13 +280,7 @@ function Index() {
             <span className="text-white font-semibold">desenvolvimento masculino</span>.
           </p>
 
-          {revealed && (
-            <div className="mt-10 flex justify-center">
-              <OfferBlock remaining={remaining} size="md" />
-            </div>
-          )}
-
-          <div className="mt-5 flex items-center justify-center gap-4 text-xs text-slate-400">
+          <div className="mt-10 flex items-center justify-center gap-4 text-xs text-slate-400">
             <span className="inline-flex items-center gap-1.5"><Lock className="size-3.5" /> Compra Segura</span>
             <span>•</span>
             <span className="inline-flex items-center gap-1.5"><ShieldCheck className="size-3.5" /> Entrega Imediata</span>
@@ -280,7 +294,8 @@ function Index() {
             <div className="absolute -inset-0.5 rounded-2xl bg-gradient-to-r from-[#0077ff]/40 via-[#3ab9ff]/30 to-[#0077ff]/40 blur-xl -z-10" aria-hidden />
             <div className="relative w-full overflow-hidden rounded-xl bg-black" style={{ aspectRatio: "4 / 3" }}>
               <iframe
-                src="https://player.vimeo.com/video/1195416694?title=0&byline=0&portrait=0&badge=0&autopause=0&loop=1&muted=0"
+                ref={iframeRef}
+                src="https://player.vimeo.com/video/1195416694?title=0&byline=0&portrait=0&badge=0&autopause=0&muted=0"
                 className="absolute inset-0 h-full w-full"
                 frameBorder={0}
                 allow="autoplay; fullscreen; picture-in-picture"
@@ -298,6 +313,7 @@ function Index() {
 
         </div>
       </section>
+
 
       {/* BENEFÍCIOS */}
       <section className="relative py-20 md:py-28">
