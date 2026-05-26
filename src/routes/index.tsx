@@ -54,7 +54,7 @@ function OfferBlock({ remaining, size = "lg" }: { remaining: number; size?: "lg"
       <div className="flex items-baseline gap-3">
         <span className="text-sm md:text-base text-slate-400 line-through">de 9.000 Kz</span>
         <span className="text-3xl md:text-4xl font-extrabold text-white glow-text">
-          por <span className="text-[#3ab9ff]">4.989 Kz</span>
+          por <span className="text-[#3ab9ff]">5.000 Kz</span>
         </span>
       </div>
 
