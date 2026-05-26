@@ -1,5 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { useEffect, useMemo, useState } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
+import Player from "@vimeo/player";
 import {
   ShieldCheck,
   Sparkles,
@@ -14,21 +15,20 @@ import {
   Clock,
 } from "lucide-react";
 
-const REVEAL_DELAY_MS = 6 * 60 * 1000; // 6 min
 const OFFER_DURATION_MS = 10 * 60 * 1000; // 10 min
+const REVEAL_BEFORE_END_SEC = 20; // mostrar CTA 20s antes do fim da VSL
 
-function useOfferReveal() {
+function useOfferReveal(triggerReveal: boolean) {
   const [revealed, setRevealed] = useState(false);
   const [revealAt, setRevealAt] = useState<number | null>(null);
   const [now, setNow] = useState(() => Date.now());
 
   useEffect(() => {
-    const t = setTimeout(() => {
+    if (triggerReveal && !revealed) {
       setRevealed(true);
       setRevealAt(Date.now());
-    }, REVEAL_DELAY_MS);
-    return () => clearTimeout(t);
-  }, []);
+    }
+  }, [triggerReveal, revealed]);
 
   useEffect(() => {
     if (!revealed) return;
