@@ -230,24 +230,10 @@ const depoimentos = [
 function Index() {
   const [shouldReveal, setShouldReveal] = useState(false);
   const { revealed, remaining } = useOfferReveal(shouldReveal);
-  const iframeRef = useRef<HTMLIFrameElement | null>(null);
 
   useEffect(() => {
-    if (!iframeRef.current) return;
-    const player = new Player(iframeRef.current);
-    const onTime = (data: { seconds: number; duration: number }) => {
-      if (data.duration > 0 && data.duration - data.seconds <= REVEAL_BEFORE_END_SEC) {
-        setShouldReveal(true);
-      }
-    };
-    const onEnd = () => setShouldReveal(true);
-    player.on("timeupdate", onTime);
-    player.on("ended", onEnd);
-    return () => {
-      player.off("timeupdate", onTime);
-      player.off("ended", onEnd);
-      player.destroy().catch(() => {});
-    };
+    const t = setTimeout(() => setShouldReveal(true), REVEAL_DELAY_MS);
+    return () => clearTimeout(t);
   }, []);
 
   return (
@@ -291,14 +277,14 @@ function Index() {
         <div className="relative z-10 max-w-3xl mx-auto px-5 pb-20 md:pb-28">
           <div className="relative mx-auto rounded-2xl border-neon p-2 md:p-3 bg-[#070b16]">
             <div className="absolute -inset-0.5 rounded-2xl bg-gradient-to-r from-[#0077ff]/40 via-[#3ab9ff]/30 to-[#0077ff]/40 blur-xl -z-10" aria-hidden />
-            <div className="relative w-full overflow-hidden rounded-xl bg-black" style={{ aspectRatio: "4 / 3" }}>
+            <div className="relative w-full overflow-hidden rounded-xl bg-black">
               <iframe
-                ref={iframeRef}
-                src="https://player.vimeo.com/video/1195416694?title=0&byline=0&portrait=0&badge=0&autopause=0&muted=0"
-                className="absolute inset-0 h-full w-full"
-                frameBorder={0}
-                allow="autoplay; fullscreen; picture-in-picture"
-                allowFullScreen
+                src="https://drive.google.com/file/d/1spZo3tuNV19wTYx99v8rpNXZME2Stpr_/preview"
+                width="100%"
+                height="500"
+                allow="autoplay"
+                className="block w-full"
+                style={{ border: 0 }}
                 title="O Truque do Sal Azul - VSL"
               />
             </div>
