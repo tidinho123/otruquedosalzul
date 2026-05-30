@@ -231,10 +231,26 @@ const depoimentos = [
 function Index() {
   const [shouldReveal, setShouldReveal] = useState(false);
   const { revealed, remaining } = useOfferReveal(shouldReveal);
+  const iframeRef = useRef<HTMLIFrameElement>(null);
 
   useEffect(() => {
-    const t = setTimeout(() => setShouldReveal(true), REVEAL_DELAY_MS);
-    return () => clearTimeout(t);
+    if (!iframeRef.current) return;
+    const player = new Player(iframeRef.current);
+    let duration = 0;
+    player.getDuration().then((d) => {
+      duration = d;
+    }).catch(() => {});
+    const onTime = ({ seconds }: { seconds: number }) => {
+      if (duration > 0 && duration - seconds <= 10) {
+        setShouldReveal(true);
+      }
+    };
+    player.on("timeupdate", onTime);
+    player.on("ended", () => setShouldReveal(true));
+    return () => {
+      player.off("timeupdate", onTime);
+      player.destroy().catch(() => {});
+    };
   }, []);
 
   return (
