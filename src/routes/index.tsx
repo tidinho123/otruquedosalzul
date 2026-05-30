@@ -277,16 +277,18 @@ function Index() {
         <div className="relative z-10 max-w-3xl mx-auto px-5 pb-20 md:pb-28">
           <div className="relative mx-auto rounded-2xl border-neon p-2 md:p-3 bg-[#070b16]">
             <div className="absolute -inset-0.5 rounded-2xl bg-gradient-to-r from-[#0077ff]/40 via-[#3ab9ff]/30 to-[#0077ff]/40 blur-xl -z-10" aria-hidden />
-            <div className="relative w-full overflow-hidden rounded-xl bg-black" style={{ position: "relative", width: "100%" }}>
-              <iframe
-                src="https://drive.google.com/file/d/1spZo3tuNV19wTYx99v8rpNXZME2Stpr_/preview"
-                width="100%"
-                height="500"
-                allow="autoplay"
-                className="block w-full"
-                style={{ border: "none", pointerEvents: "none" }}
-                title="O Truque do Sal Azul - VSL"
-              />
+            <div className="relative w-full overflow-hidden rounded-xl bg-black">
+              <div className="relative w-full" style={{ paddingBottom: "196.3%" }}>
+                <iframe
+                  src="https://player.vimeo.com/video/1197000161?title=0&byline=0&portrait=0&badge=0&autopause=0&loop=1"
+                  frameBorder={0}
+                  allow="autoplay; fullscreen; picture-in-picture"
+                  allowFullScreen
+                  className="absolute inset-0 w-full h-full"
+                  style={{ border: 0 }}
+                  title="O Truque do Sal Azul - VSL"
+                />
+              </div>
             </div>
           </div>
 
