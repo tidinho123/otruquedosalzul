@@ -1,5 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { useEffect, useMemo, useState } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
+import Player from "@vimeo/player";
 import {
   ShieldCheck,
   Sparkles,
@@ -230,10 +231,26 @@ const depoimentos = [
 function Index() {
   const [shouldReveal, setShouldReveal] = useState(false);
   const { revealed, remaining } = useOfferReveal(shouldReveal);
+  const iframeRef = useRef<HTMLIFrameElement>(null);
 
   useEffect(() => {
-    const t = setTimeout(() => setShouldReveal(true), REVEAL_DELAY_MS);
-    return () => clearTimeout(t);
+    if (!iframeRef.current) return;
+    const player = new Player(iframeRef.current);
+    let duration = 0;
+    player.getDuration().then((d) => {
+      duration = d;
+    }).catch(() => {});
+    const onTime = ({ seconds }: { seconds: number }) => {
+      if (duration > 0 && duration - seconds <= 10) {
+        setShouldReveal(true);
+      }
+    };
+    player.on("timeupdate", onTime);
+    player.on("ended", () => setShouldReveal(true));
+    return () => {
+      player.off("timeupdate", onTime);
+      player.destroy().catch(() => {});
+    };
   }, []);
 
   return (
@@ -280,6 +297,7 @@ function Index() {
             <div className="relative w-full overflow-hidden rounded-xl bg-black">
               <div className="relative w-full" style={{ paddingBottom: "196.3%" }}>
                 <iframe
+                  ref={iframeRef}
                   src="https://player.vimeo.com/video/1197000161?title=0&byline=0&portrait=0&badge=0&autopause=0&loop=1"
                   frameBorder={0}
                   allow="autoplay; fullscreen; picture-in-picture"
