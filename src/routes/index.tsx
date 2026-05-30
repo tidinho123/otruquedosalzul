@@ -297,6 +297,7 @@ function Index() {
             <div className="relative w-full overflow-hidden rounded-xl bg-black">
               <div className="relative w-full" style={{ paddingBottom: "196.3%" }}>
                 <iframe
+                  ref={iframeRef}
                   src="https://player.vimeo.com/video/1197000161?title=0&byline=0&portrait=0&badge=0&autopause=0&loop=1"
                   frameBorder={0}
                   allow="autoplay; fullscreen; picture-in-picture"
