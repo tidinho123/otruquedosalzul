@@ -113,6 +113,11 @@ function RootShell({ children }: { children: React.ReactNode }) {
             __html: `<img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=2028936447700629&ev=PageView&noscript=1" />`,
           }}
         />
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `window.pixelId = "6a20b5e50818f2e4b1f39a48";var a=document.createElement("script");a.setAttribute("async","");a.setAttribute("defer","");a.setAttribute("src","https://cdn.utmify.com.br/scripts/pixel/pixel.js");document.head.appendChild(a);`,
+          }}
+        />
       </head>
       <body>
         {children}
