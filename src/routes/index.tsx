@@ -199,12 +199,12 @@ function LiveNotifications() {
 }
 
 const beneficios = [
-  { icon: TrendingUp, title: "Mais Confiança", desc: "Postura, presença e segurança no dia a dia." },
-  { icon: Flame, title: "Mais Disposição", desc: "Energia renovada do despertar até a noite." },
-  { icon: Leaf, title: "Rotina Natural", desc: "Receitas simples com ingredientes acessíveis." },
-  { icon: HeartPulse, title: "Melhor Autocuidado", desc: "Hábitos sustentáveis para o longo prazo." },
-  { icon: Sparkles, title: "Desenvolvimento Pessoal", desc: "Disciplina, foco e bem-estar masculino." },
-  { icon: ShieldCheck, title: "Método Discreto", desc: "100% digital, acessível em qualquer dispositivo." },
+  { icon: Flame, title: "Mais Fogo e Vontade", desc: "Reacenda o desejo e a vontade de estar com sua mulher como antes." },
+  { icon: TrendingUp, title: "Confiança Renovada", desc: "Volte a se sentir o homem que você sabe que é — sem inseguranças." },
+  { icon: Zap, title: "Mais Energia no Dia a Dia", desc: "Disposição do despertar até a noite, sem aquele cansaço constante." },
+  { icon: HeartPulse, title: "Vitalidade Masculina", desc: "Hábitos e receitas que cuidam do seu corpo de dentro para fora." },
+  { icon: Leaf, title: "100% Natural e Discreto", desc: "Ingredientes simples que você encontra no mercado da esquina." },
+  { icon: ShieldCheck, title: "Método Aprovado", desc: "Centenas de homens já aplicaram e relatam mudanças reais." },
 ];
 
 const depoimentos = [
@@ -212,25 +212,48 @@ const depoimentos = [
     nome: "Adilson M.",
     inicial: "A",
     cor: "from-sky-500 to-indigo-700",
-    texto: "Em poucas semanas notei diferença na disposição. Vale cada centavo.",
+    texto: "Minha esposa percebeu a diferença antes de mim. Voltei a me sentir homem de verdade.",
   },
   {
     nome: "Hélder P.",
     inicial: "H",
     cor: "from-cyan-500 to-blue-700",
-    texto: "Receitas simples, ingredientes que tenho em casa. Recomendo demais.",
+    texto: "Receitas simples, com o que tenho em casa. Em poucas semanas a disposição mudou.",
   },
   {
     nome: "Nelson K.",
     inicial: "N",
     cor: "from-blue-500 to-violet-700",
-    texto: "Conteúdo direto ao ponto. Senti mais confiança e foco no trabalho.",
+    texto: "Achei que era papo de internet. Apliquei, e hoje recomendo para todos os amigos.",
   },
   {
     nome: "Edmilson S.",
     inicial: "E",
     cor: "from-sky-600 to-cyan-500",
-    texto: "Achei que era mais uma promessa, mas o material é sério e funciona.",
+    texto: "Por 5.000 Kz eu não tinha o que perder. Resultado: melhor decisão do mês.",
+  },
+];
+
+const faq = [
+  {
+    q: "Como vou receber o material?",
+    a: "Assim que o pagamento for confirmado, você recebe o acesso imediato no seu e-mail. Tudo 100% digital, no celular ou computador.",
+  },
+  {
+    q: "Funciona mesmo? E se eu não gostar?",
+    a: "Você tem 7 dias de garantia. Se não sentir que o método é para você, devolvemos o seu dinheiro. Sem perguntas.",
+  },
+  {
+    q: "Preciso comprar remédio ou algum produto caro?",
+    a: "Não. O método usa ingredientes naturais e acessíveis que você encontra em qualquer mercado em Angola.",
+  },
+  {
+    q: "É discreto? Alguém vai saber que eu comprei?",
+    a: "Totalmente discreto. A cobrança e o e-mail chegam com nome neutro. Ninguém precisa saber.",
+  },
+  {
+    q: "Em quanto tempo começo a sentir diferença?",
+    a: "A maioria dos homens relata mais disposição e confiança já nas primeiras semanas de aplicação consistente.",
   },
 ];
 
