@@ -434,12 +434,16 @@ function Index() {
             <div className="mx-auto size-16 rounded-2xl bg-[#0e1a33] grid place-content-center glow-neon">
               <ShieldCheck className="size-8 text-[#3ab9ff]" />
             </div>
-            <h3 className="mt-6 text-2xl md:text-3xl font-bold">
-              Conteúdo Digital Entregue Imediatamente
+            <p className="mt-6 text-sm uppercase tracking-widest text-[#3ab9ff] font-semibold">
+              Garantia Incondicional de 7 dias
+            </p>
+            <h3 className="mt-3 text-2xl md:text-3xl font-bold">
+              Teste sem risco. Se não gostar, devolvemos cada Kwanza.
             </h3>
             <p className="mt-4 text-slate-300">
-              Assim que confirmar o pagamento, você recebe o acesso ao material completo.
-              Estude no seu ritmo, em qualquer dispositivo, quantas vezes quiser.
+              Você tem <span className="text-white font-semibold">7 dias completos</span> para acessar
+              todo o material. Se sentir que não é para você, basta enviar uma mensagem e o reembolso
+              é feito na hora. <span className="text-white font-semibold">Sem perguntas. Sem burocracia.</span> O risco é todo nosso.
             </p>
 
             {revealed && (
@@ -449,6 +453,38 @@ function Index() {
             )}
 
           </div>
+        </div>
+      </section>
+
+      {/* FAQ */}
+      <section className="relative py-20 md:py-24 bg-[#06080f]">
+        <div className="max-w-3xl mx-auto px-5">
+          <div className="text-center max-w-2xl mx-auto">
+            <p className="text-[#3ab9ff] font-semibold text-sm uppercase tracking-widest">Perguntas Frequentes</p>
+            <h2 className="mt-3 text-3xl md:text-5xl font-bold">
+              Tirando suas últimas dúvidas
+            </h2>
+          </div>
+          <div className="mt-12 space-y-4">
+            {faq.map((item) => (
+              <details
+                key={item.q}
+                className="group rounded-2xl border border-[#1b2742] bg-[#0a0f1f] p-5 open:border-[#3ab9ff]/60 transition-colors"
+              >
+                <summary className="cursor-pointer list-none flex items-center justify-between gap-4 font-semibold text-white">
+                  <span>{item.q}</span>
+                  <span className="text-[#3ab9ff] text-2xl leading-none transition-transform group-open:rotate-45">+</span>
+                </summary>
+                <p className="mt-3 text-slate-300 text-sm leading-relaxed">{item.a}</p>
+              </details>
+            ))}
+          </div>
+
+          {revealed && (
+            <div className="mt-12 flex justify-center">
+              <OfferBlock remaining={remaining} size="lg" />
+            </div>
+          )}
         </div>
       </section>
 
