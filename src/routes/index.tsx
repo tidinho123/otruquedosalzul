@@ -51,16 +51,19 @@ function OfferBlock({ remaining, size = "lg" }: { remaining: number; size?: "lg"
   const expired = remaining <= 0;
   return (
     <div className="fade-in-up mt-2 flex flex-col items-center gap-4 w-full">
-      <div className="flex items-baseline gap-3">
-        <span className="text-sm md:text-base text-slate-400 line-through">de 9.000 Kz</span>
-        <span className="text-3xl md:text-4xl font-extrabold text-white glow-text">
-          por <span className="text-[#3ab9ff]">5.000 Kz</span>
+      <div className="flex flex-col items-center gap-1">
+        <span className="text-sm md:text-base text-slate-400 line-through">De 9.000 Kz</span>
+        <span className="text-3xl md:text-5xl font-extrabold text-white glow-text">
+          Hoje por <span className="text-[#3ab9ff]">5.000 Kz</span>
+        </span>
+        <span className="text-xs text-emerald-400 font-semibold uppercase tracking-wider">
+          Economia de 44% • Apenas hoje
         </span>
       </div>
 
       <div className="inline-flex items-center gap-2 rounded-xl border border-[#3ab9ff]/40 bg-[#0a0f1f]/80 backdrop-blur px-4 py-2 text-sm md:text-base">
         <Clock className="size-4 text-[#3ab9ff]" />
-        <span className="text-slate-300">A oferta termina em</span>
+        <span className="text-slate-300">Esta oferta expira em</span>
         <span className="font-mono font-bold text-[#3ab9ff] tabular-nums tracking-wider text-lg">
           {formatMMSS(remaining)}
         </span>
@@ -69,15 +72,18 @@ function OfferBlock({ remaining, size = "lg" }: { remaining: number; size?: "lg"
       <a
         href={expired ? "#" : CHECKOUT_URL}
         aria-disabled={expired}
-        className={`btn-cta inline-flex items-center justify-center gap-2 rounded-xl bg-gradient-to-b from-[#3ab9ff] to-[#0077ff] text-white font-extrabold tracking-wide transition-transform hover:scale-[1.03] ${
+        className={`btn-cta inline-flex items-center justify-center gap-2 rounded-xl bg-gradient-to-b from-[#3ab9ff] to-[#0077ff] text-white font-extrabold tracking-wide transition-transform hover:scale-[1.03] shadow-[0_10px_40px_rgba(58,185,255,0.45)] ${
           size === "lg" ? "px-10 py-5 text-lg md:text-xl" : "px-8 py-4 text-base md:text-lg"
         } ${expired ? "opacity-60 pointer-events-none" : ""}`}
       >
         <Sparkles className="size-5" />
-        {expired ? "OFERTA ENCERRADA" : "QUERO ACESSAR AGORA"}
+        {expired ? "OFERTA ENCERRADA" : "SIM! QUERO ACESSO AGORA"}
       </a>
       {!expired && (
-        <p className="text-xs text-slate-400">Acesso imediato • Pagamento seguro</p>
+        <div className="flex flex-col items-center gap-1">
+          <p className="text-xs text-slate-300">✅ Acesso imediato após o pagamento</p>
+          <p className="text-xs text-slate-400">🔒 Compra 100% segura • Garantia de 7 dias</p>
+        </div>
       )}
     </div>
   );
