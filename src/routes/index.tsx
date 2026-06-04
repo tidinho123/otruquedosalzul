@@ -51,16 +51,19 @@ function OfferBlock({ remaining, size = "lg" }: { remaining: number; size?: "lg"
   const expired = remaining <= 0;
   return (
     <div className="fade-in-up mt-2 flex flex-col items-center gap-4 w-full">
-      <div className="flex items-baseline gap-3">
-        <span className="text-sm md:text-base text-slate-400 line-through">de 9.000 Kz</span>
-        <span className="text-3xl md:text-4xl font-extrabold text-white glow-text">
-          por <span className="text-[#3ab9ff]">5.000 Kz</span>
+      <div className="flex flex-col items-center gap-1">
+        <span className="text-sm md:text-base text-slate-400 line-through">De 9.000 Kz</span>
+        <span className="text-3xl md:text-5xl font-extrabold text-white glow-text">
+          Hoje por <span className="text-[#3ab9ff]">5.000 Kz</span>
+        </span>
+        <span className="text-xs text-emerald-400 font-semibold uppercase tracking-wider">
+          Economia de 44% • Apenas hoje
         </span>
       </div>
 
       <div className="inline-flex items-center gap-2 rounded-xl border border-[#3ab9ff]/40 bg-[#0a0f1f]/80 backdrop-blur px-4 py-2 text-sm md:text-base">
         <Clock className="size-4 text-[#3ab9ff]" />
-        <span className="text-slate-300">A oferta termina em</span>
+        <span className="text-slate-300">Esta oferta expira em</span>
         <span className="font-mono font-bold text-[#3ab9ff] tabular-nums tracking-wider text-lg">
           {formatMMSS(remaining)}
         </span>
@@ -69,15 +72,18 @@ function OfferBlock({ remaining, size = "lg" }: { remaining: number; size?: "lg"
       <a
         href={expired ? "#" : CHECKOUT_URL}
         aria-disabled={expired}
-        className={`btn-cta inline-flex items-center justify-center gap-2 rounded-xl bg-gradient-to-b from-[#3ab9ff] to-[#0077ff] text-white font-extrabold tracking-wide transition-transform hover:scale-[1.03] ${
+        className={`btn-cta inline-flex items-center justify-center gap-2 rounded-xl bg-gradient-to-b from-[#3ab9ff] to-[#0077ff] text-white font-extrabold tracking-wide transition-transform hover:scale-[1.03] shadow-[0_10px_40px_rgba(58,185,255,0.45)] ${
           size === "lg" ? "px-10 py-5 text-lg md:text-xl" : "px-8 py-4 text-base md:text-lg"
         } ${expired ? "opacity-60 pointer-events-none" : ""}`}
       >
         <Sparkles className="size-5" />
-        {expired ? "OFERTA ENCERRADA" : "QUERO ACESSAR AGORA"}
+        {expired ? "OFERTA ENCERRADA" : "SIM! QUERO ACESSO AGORA"}
       </a>
       {!expired && (
-        <p className="text-xs text-slate-400">Acesso imediato • Pagamento seguro</p>
+        <div className="flex flex-col items-center gap-1">
+          <p className="text-xs text-slate-300">✅ Acesso imediato após o pagamento</p>
+          <p className="text-xs text-slate-400">🔒 Compra 100% segura • Garantia de 7 dias</p>
+        </div>
       )}
     </div>
   );
@@ -193,12 +199,12 @@ function LiveNotifications() {
 }
 
 const beneficios = [
-  { icon: TrendingUp, title: "Mais Confiança", desc: "Postura, presença e segurança no dia a dia." },
-  { icon: Flame, title: "Mais Disposição", desc: "Energia renovada do despertar até a noite." },
-  { icon: Leaf, title: "Rotina Natural", desc: "Receitas simples com ingredientes acessíveis." },
-  { icon: HeartPulse, title: "Melhor Autocuidado", desc: "Hábitos sustentáveis para o longo prazo." },
-  { icon: Sparkles, title: "Desenvolvimento Pessoal", desc: "Disciplina, foco e bem-estar masculino." },
-  { icon: ShieldCheck, title: "Método Discreto", desc: "100% digital, acessível em qualquer dispositivo." },
+  { icon: Flame, title: "Mais Fogo e Vontade", desc: "Reacenda o desejo e a vontade de estar com sua mulher como antes." },
+  { icon: TrendingUp, title: "Confiança Renovada", desc: "Volte a se sentir o homem que você sabe que é — sem inseguranças." },
+  { icon: Zap, title: "Mais Energia no Dia a Dia", desc: "Disposição do despertar até a noite, sem aquele cansaço constante." },
+  { icon: HeartPulse, title: "Vitalidade Masculina", desc: "Hábitos e receitas que cuidam do seu corpo de dentro para fora." },
+  { icon: Leaf, title: "100% Natural e Discreto", desc: "Ingredientes simples que você encontra no mercado da esquina." },
+  { icon: ShieldCheck, title: "Método Aprovado", desc: "Centenas de homens já aplicaram e relatam mudanças reais." },
 ];
 
 const depoimentos = [
@@ -206,25 +212,48 @@ const depoimentos = [
     nome: "Adilson M.",
     inicial: "A",
     cor: "from-sky-500 to-indigo-700",
-    texto: "Em poucas semanas notei diferença na disposição. Vale cada centavo.",
+    texto: "Minha esposa percebeu a diferença antes de mim. Voltei a me sentir homem de verdade.",
   },
   {
     nome: "Hélder P.",
     inicial: "H",
     cor: "from-cyan-500 to-blue-700",
-    texto: "Receitas simples, ingredientes que tenho em casa. Recomendo demais.",
+    texto: "Receitas simples, com o que tenho em casa. Em poucas semanas a disposição mudou.",
   },
   {
     nome: "Nelson K.",
     inicial: "N",
     cor: "from-blue-500 to-violet-700",
-    texto: "Conteúdo direto ao ponto. Senti mais confiança e foco no trabalho.",
+    texto: "Achei que era papo de internet. Apliquei, e hoje recomendo para todos os amigos.",
   },
   {
     nome: "Edmilson S.",
     inicial: "E",
     cor: "from-sky-600 to-cyan-500",
-    texto: "Achei que era mais uma promessa, mas o material é sério e funciona.",
+    texto: "Por 5.000 Kz eu não tinha o que perder. Resultado: melhor decisão do mês.",
+  },
+];
+
+const faq = [
+  {
+    q: "Como vou receber o material?",
+    a: "Assim que o pagamento for confirmado, você recebe o acesso imediato no seu e-mail. Tudo 100% digital, no celular ou computador.",
+  },
+  {
+    q: "Funciona mesmo? E se eu não gostar?",
+    a: "Você tem 7 dias de garantia. Se não sentir que o método é para você, devolvemos o seu dinheiro. Sem perguntas.",
+  },
+  {
+    q: "Preciso comprar remédio ou algum produto caro?",
+    a: "Não. O método usa ingredientes naturais e acessíveis que você encontra em qualquer mercado em Angola.",
+  },
+  {
+    q: "É discreto? Alguém vai saber que eu comprei?",
+    a: "Totalmente discreto. A cobrança e o e-mail chegam com nome neutro. Ninguém precisa saber.",
+  },
+  {
+    q: "Em quanto tempo começo a sentir diferença?",
+    a: "A maioria dos homens relata mais disposição e confiança já nas primeiras semanas de aplicação consistente.",
   },
 ];
 
@@ -264,28 +293,31 @@ function Index() {
         <Particles />
 
         <div className="relative z-10 max-w-6xl mx-auto px-5 pt-20 pb-12 md:pt-28 md:pb-16 text-center">
-          <div className="inline-flex items-center gap-2 rounded-full border border-[#1b2742] bg-[#0a0f1f]/70 backdrop-blur px-4 py-1.5 text-xs md:text-sm text-slate-300 fade-in-up">
-            <Zap className="size-3.5 text-[#3ab9ff]" />
-            Método Natural • Acesso Digital Imediato
+          <div className="inline-flex items-center gap-2 rounded-full border border-red-500/40 bg-red-500/10 backdrop-blur px-4 py-1.5 text-xs md:text-sm text-red-300 font-semibold fade-in-up">
+            <Flame className="size-3.5 text-red-400" />
+            ATENÇÃO HOMEM ANGOLANO • Leia antes que saia do ar
           </div>
 
           <h1 className="mt-6 text-4xl md:text-6xl font-extrabold tracking-tight leading-[1.05] fade-in-up">
-            Descubra o <span className="glow-text text-[#3ab9ff]">Método Natural</span> que Está
-            Chamando Atenção Entre Homens que Querem
-            <br className="hidden md:block" /> Mais Confiança e Desempenho
+            O <span className="glow-text text-[#3ab9ff]">"Truque do Sal Azul"</span> que Está Salvando
+            o Casamento de Milhares de Homens —
+            <br className="hidden md:block" />
+            <span className="text-white"> e a Sua Mulher Vai Notar a Diferença</span>
           </h1>
 
           <p className="mt-6 max-w-2xl mx-auto text-base md:text-lg text-slate-300 fade-in-up">
-            Aprenda receitas naturais, hábitos e estratégias que ajudam na{" "}
-            <span className="text-white font-semibold">disposição</span>,{" "}
-            <span className="text-white font-semibold">resistência</span> e{" "}
-            <span className="text-white font-semibold">desenvolvimento masculino</span>.
+            Se você já sentiu aquela <span className="text-white font-semibold">vergonha silenciosa</span> de
+            não conseguir entregar o que sua mulher merece na cama, assista o vídeo abaixo
+            <span className="text-white font-semibold"> até o final</span>. O que você vai descobrir
+            pode mudar a forma como você se enxerga como homem — começando hoje à noite.
           </p>
 
-          <div className="mt-10 flex items-center justify-center gap-4 text-xs text-slate-400">
-            <span className="inline-flex items-center gap-1.5"><Lock className="size-3.5" /> Compra Segura</span>
+          <div className="mt-10 flex flex-wrap items-center justify-center gap-4 text-xs text-slate-400">
+            <span className="inline-flex items-center gap-1.5"><Lock className="size-3.5" /> Compra 100% Segura</span>
             <span>•</span>
-            <span className="inline-flex items-center gap-1.5"><ShieldCheck className="size-3.5" /> Entrega Imediata</span>
+            <span className="inline-flex items-center gap-1.5"><ShieldCheck className="size-3.5" /> Garantia de 7 dias</span>
+            <span>•</span>
+            <span className="inline-flex items-center gap-1.5"><Zap className="size-3.5" /> Acesso Imediato</span>
           </div>
         </div>
 
@@ -324,12 +356,12 @@ function Index() {
       <section className="relative py-20 md:py-28">
         <div className="max-w-6xl mx-auto px-5">
           <div className="text-center max-w-2xl mx-auto">
-            <p className="text-[#3ab9ff] font-semibold text-sm uppercase tracking-widest">Benefícios</p>
+            <p className="text-[#3ab9ff] font-semibold text-sm uppercase tracking-widest">O que você leva hoje</p>
             <h2 className="mt-3 text-3xl md:text-5xl font-bold">
-              O que você desbloqueia com o método
+              Tudo que você precisa para <span className="text-[#3ab9ff]">virar o jogo</span> em casa
             </h2>
             <p className="mt-4 text-slate-400">
-              Um passo a passo prático para homens que querem evolução real.
+              Sem fórmulas mágicas. Apenas o passo a passo que homens de verdade estão aplicando — com discrição e resultado.
             </p>
           </div>
 
@@ -402,12 +434,16 @@ function Index() {
             <div className="mx-auto size-16 rounded-2xl bg-[#0e1a33] grid place-content-center glow-neon">
               <ShieldCheck className="size-8 text-[#3ab9ff]" />
             </div>
-            <h3 className="mt-6 text-2xl md:text-3xl font-bold">
-              Conteúdo Digital Entregue Imediatamente
+            <p className="mt-6 text-sm uppercase tracking-widest text-[#3ab9ff] font-semibold">
+              Garantia Incondicional de 7 dias
+            </p>
+            <h3 className="mt-3 text-2xl md:text-3xl font-bold">
+              Teste sem risco. Se não gostar, devolvemos cada Kwanza.
             </h3>
             <p className="mt-4 text-slate-300">
-              Assim que confirmar o pagamento, você recebe o acesso ao material completo.
-              Estude no seu ritmo, em qualquer dispositivo, quantas vezes quiser.
+              Você tem <span className="text-white font-semibold">7 dias completos</span> para acessar
+              todo o material. Se sentir que não é para você, basta enviar uma mensagem e o reembolso
+              é feito na hora. <span className="text-white font-semibold">Sem perguntas. Sem burocracia.</span> O risco é todo nosso.
             </p>
 
             {revealed && (
@@ -417,6 +453,38 @@ function Index() {
             )}
 
           </div>
+        </div>
+      </section>
+
+      {/* FAQ */}
+      <section className="relative py-20 md:py-24 bg-[#06080f]">
+        <div className="max-w-3xl mx-auto px-5">
+          <div className="text-center max-w-2xl mx-auto">
+            <p className="text-[#3ab9ff] font-semibold text-sm uppercase tracking-widest">Perguntas Frequentes</p>
+            <h2 className="mt-3 text-3xl md:text-5xl font-bold">
+              Tirando suas últimas dúvidas
+            </h2>
+          </div>
+          <div className="mt-12 space-y-4">
+            {faq.map((item) => (
+              <details
+                key={item.q}
+                className="group rounded-2xl border border-[#1b2742] bg-[#0a0f1f] p-5 open:border-[#3ab9ff]/60 transition-colors"
+              >
+                <summary className="cursor-pointer list-none flex items-center justify-between gap-4 font-semibold text-white">
+                  <span>{item.q}</span>
+                  <span className="text-[#3ab9ff] text-2xl leading-none transition-transform group-open:rotate-45">+</span>
+                </summary>
+                <p className="mt-3 text-slate-300 text-sm leading-relaxed">{item.a}</p>
+              </details>
+            ))}
+          </div>
+
+          {revealed && (
+            <div className="mt-12 flex justify-center">
+              <OfferBlock remaining={remaining} size="lg" />
+            </div>
+          )}
         </div>
       </section>
 
