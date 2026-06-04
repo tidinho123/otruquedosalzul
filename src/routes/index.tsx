@@ -293,28 +293,31 @@ function Index() {
         <Particles />
 
         <div className="relative z-10 max-w-6xl mx-auto px-5 pt-20 pb-12 md:pt-28 md:pb-16 text-center">
-          <div className="inline-flex items-center gap-2 rounded-full border border-[#1b2742] bg-[#0a0f1f]/70 backdrop-blur px-4 py-1.5 text-xs md:text-sm text-slate-300 fade-in-up">
-            <Zap className="size-3.5 text-[#3ab9ff]" />
-            Método Natural • Acesso Digital Imediato
+          <div className="inline-flex items-center gap-2 rounded-full border border-red-500/40 bg-red-500/10 backdrop-blur px-4 py-1.5 text-xs md:text-sm text-red-300 font-semibold fade-in-up">
+            <Flame className="size-3.5 text-red-400" />
+            ATENÇÃO HOMEM ANGOLANO • Leia antes que saia do ar
           </div>
 
           <h1 className="mt-6 text-4xl md:text-6xl font-extrabold tracking-tight leading-[1.05] fade-in-up">
-            Descubra o <span className="glow-text text-[#3ab9ff]">Método Natural</span> que Está
-            Chamando Atenção Entre Homens que Querem
-            <br className="hidden md:block" /> Mais Confiança e Desempenho
+            O <span className="glow-text text-[#3ab9ff]">"Truque do Sal Azul"</span> que Está Salvando
+            o Casamento de Milhares de Homens —
+            <br className="hidden md:block" />
+            <span className="text-white"> e a Sua Mulher Vai Notar a Diferença</span>
           </h1>
 
           <p className="mt-6 max-w-2xl mx-auto text-base md:text-lg text-slate-300 fade-in-up">
-            Aprenda receitas naturais, hábitos e estratégias que ajudam na{" "}
-            <span className="text-white font-semibold">disposição</span>,{" "}
-            <span className="text-white font-semibold">resistência</span> e{" "}
-            <span className="text-white font-semibold">desenvolvimento masculino</span>.
+            Se você já sentiu aquela <span className="text-white font-semibold">vergonha silenciosa</span> de
+            não conseguir entregar o que sua mulher merece na cama, assista o vídeo abaixo
+            <span className="text-white font-semibold"> até o final</span>. O que você vai descobrir
+            pode mudar a forma como você se enxerga como homem — começando hoje à noite.
           </p>
 
-          <div className="mt-10 flex items-center justify-center gap-4 text-xs text-slate-400">
-            <span className="inline-flex items-center gap-1.5"><Lock className="size-3.5" /> Compra Segura</span>
+          <div className="mt-10 flex flex-wrap items-center justify-center gap-4 text-xs text-slate-400">
+            <span className="inline-flex items-center gap-1.5"><Lock className="size-3.5" /> Compra 100% Segura</span>
             <span>•</span>
-            <span className="inline-flex items-center gap-1.5"><ShieldCheck className="size-3.5" /> Entrega Imediata</span>
+            <span className="inline-flex items-center gap-1.5"><ShieldCheck className="size-3.5" /> Garantia de 7 dias</span>
+            <span>•</span>
+            <span className="inline-flex items-center gap-1.5"><Zap className="size-3.5" /> Acesso Imediato</span>
           </div>
         </div>
 
