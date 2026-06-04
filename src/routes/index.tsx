@@ -356,12 +356,12 @@ function Index() {
       <section className="relative py-20 md:py-28">
         <div className="max-w-6xl mx-auto px-5">
           <div className="text-center max-w-2xl mx-auto">
-            <p className="text-[#3ab9ff] font-semibold text-sm uppercase tracking-widest">Benefícios</p>
+            <p className="text-[#3ab9ff] font-semibold text-sm uppercase tracking-widest">O que você leva hoje</p>
             <h2 className="mt-3 text-3xl md:text-5xl font-bold">
-              O que você desbloqueia com o método
+              Tudo que você precisa para <span className="text-[#3ab9ff]">virar o jogo</span> em casa
             </h2>
             <p className="mt-4 text-slate-400">
-              Um passo a passo prático para homens que querem evolução real.
+              Sem fórmulas mágicas. Apenas o passo a passo que homens de verdade estão aplicando — com discrição e resultado.
             </p>
           </div>
 
