@@ -57,7 +57,7 @@ function OfferBlock({ remaining, size = "lg" }: { remaining: number; size?: "lg"
           Hoje por <span className="text-[#3ab9ff]">5.000 Kz</span>
         </span>
         <span className="text-xs text-emerald-400 font-semibold uppercase tracking-wider">
-          Economia de 44% • Apenas hoje
+          Poupas 4.000 Kz só hoje
         </span>
       </div>
 
