@@ -199,61 +199,61 @@ function LiveNotifications() {
 }
 
 const beneficios = [
-  { icon: Flame, title: "Mais Fogo e Vontade", desc: "Reacenda o desejo e a vontade de estar com sua mulher como antes." },
-  { icon: TrendingUp, title: "Confiança Renovada", desc: "Volte a se sentir o homem que você sabe que é — sem inseguranças." },
-  { icon: Zap, title: "Mais Energia no Dia a Dia", desc: "Disposição do despertar até a noite, sem aquele cansaço constante." },
-  { icon: HeartPulse, title: "Vitalidade Masculina", desc: "Hábitos e receitas que cuidam do seu corpo de dentro para fora." },
-  { icon: Leaf, title: "100% Natural e Discreto", desc: "Ingredientes simples que você encontra no mercado da esquina." },
-  { icon: ShieldCheck, title: "Método Aprovado", desc: "Centenas de homens já aplicaram e relatam mudanças reais." },
+  { icon: Flame, title: "Volta a sentir vontade", desc: "Aquela vontade que parecia ter sumido, voltando aos poucos, no teu tempo." },
+  { icon: TrendingUp, title: "Cabeça mais leve", desc: "Sem aquele peso de ficar a pensar 'será que hoje vai dar certo?'." },
+  { icon: Zap, title: "Mais pique no dia-a-dia", desc: "Acordas com disposição. Não chegas a casa esgotado como antes." },
+  { icon: HeartPulse, title: "Cuidas da tua saúde", desc: "Hábitos simples que homem nenhum te conta na conversa do quintal." },
+  { icon: Leaf, title: "Tudo do mercado", desc: "Ingredientes que compras no Roque, no Asa Branca ou no mercado do teu bairro." },
+  { icon: ShieldCheck, title: "Sem ninguém saber", desc: "Tu lês no telefone, aplicas em casa. Nem a tua mulher precisa saber como." },
 ];
 
 const depoimentos = [
   {
-    nome: "Adilson M.",
+    nome: "Adilson, 38 — Viana",
     inicial: "A",
     cor: "from-sky-500 to-indigo-700",
-    texto: "Minha esposa percebeu a diferença antes de mim. Voltei a me sentir homem de verdade.",
+    texto: "Mano, eu vou ser sincero: comprei meio desconfiado. Mas em duas semanas a minha esposa já estava a perguntar o que é que eu andava a tomar. Não tomei nada — só apliquei o que tá lá.",
   },
   {
-    nome: "Hélder P.",
+    nome: "Hélder, 45 — Benguela",
     inicial: "H",
     cor: "from-cyan-500 to-blue-700",
-    texto: "Receitas simples, com o que tenho em casa. Em poucas semanas a disposição mudou.",
+    texto: "Eu já tinha gastado mais de 30 mil em coisas que não funcionaram. Esse aqui foi o único que mudou alguma coisa de verdade. Recomendo aos amigos, mas baixinho.",
   },
   {
-    nome: "Nelson K.",
+    nome: "Nelson, 41 — Talatona",
     inicial: "N",
     cor: "from-blue-500 to-violet-700",
-    texto: "Achei que era papo de internet. Apliquei, e hoje recomendo para todos os amigos.",
+    texto: "A primeira semana ainda achei que era psicológico. Aí passou um mês e a diferença é real. Não é milagre, é hábito. Mas funciona.",
   },
   {
-    nome: "Edmilson S.",
+    nome: "Edmilson, 33 — Huambo",
     inicial: "E",
     cor: "from-sky-600 to-cyan-500",
-    texto: "Por 5.000 Kz eu não tinha o que perder. Resultado: melhor decisão do mês.",
+    texto: "Pelo preço, não tinha como reclamar. Hoje agradeço por ter clicado naquele dia.",
   },
 ];
 
 const faq = [
   {
-    q: "Como vou receber o material?",
-    a: "Assim que o pagamento for confirmado, você recebe o acesso imediato no seu e-mail. Tudo 100% digital, no celular ou computador.",
+    q: "Como é que eu recebo isso?",
+    a: "Assim que o pagamento entra, chega no teu email o acesso. Abres no telemóvel, no computador, onde for. É tudo digital — não vem caixa nem encomenda para casa.",
   },
   {
-    q: "Funciona mesmo? E se eu não gostar?",
-    a: "Você tem 7 dias de garantia. Se não sentir que o método é para você, devolvemos o seu dinheiro. Sem perguntas.",
+    q: "E se não funcionar comigo?",
+    a: "Tens 7 dias. Se abrires e achares que não é para ti, mandas uma mensagem e devolvemos o dinheiro. Não vamos ficar a fazer perguntas chatas.",
   },
   {
-    q: "Preciso comprar remédio ou algum produto caro?",
-    a: "Não. O método usa ingredientes naturais e acessíveis que você encontra em qualquer mercado em Angola.",
+    q: "Preciso comprar comprimido ou alguma coisa cara?",
+    a: "Não. O que está lá usa coisas normais de mercado. Nada de farmácia, nada de importado.",
   },
   {
-    q: "É discreto? Alguém vai saber que eu comprei?",
-    a: "Totalmente discreto. A cobrança e o e-mail chegam com nome neutro. Ninguém precisa saber.",
+    q: "A minha mulher vai descobrir?",
+    a: "Só se tu quiseres. A cobrança chega com nome neutro e o material fica no teu email. Ninguém precisa saber.",
   },
   {
-    q: "Em quanto tempo começo a sentir diferença?",
-    a: "A maioria dos homens relata mais disposição e confiança já nas primeiras semanas de aplicação consistente.",
+    q: "Quanto tempo demora a notar diferença?",
+    a: "Depende de cada um. A maioria fala em mudança nas primeiras 2 a 3 semanas, desde que apliques a sério. Não é mágica — é constância.",
   },
 ];
 
