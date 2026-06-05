@@ -295,29 +295,27 @@ function Index() {
         <div className="relative z-10 max-w-6xl mx-auto px-5 pt-20 pb-12 md:pt-28 md:pb-16 text-center">
           <div className="inline-flex items-center gap-2 rounded-full border border-red-500/40 bg-red-500/10 backdrop-blur px-4 py-1.5 text-xs md:text-sm text-red-300 font-semibold fade-in-up">
             <Flame className="size-3.5 text-red-400" />
-            ATENÇÃO HOMEM ANGOLANO • Leia antes que saia do ar
+            Mano, lê isto antes de fechar a página
           </div>
 
           <h1 className="mt-6 text-4xl md:text-6xl font-extrabold tracking-tight leading-[1.05] fade-in-up">
-            O <span className="glow-text text-[#3ab9ff]">"Truque do Sal Azul"</span> que Está Salvando
-            o Casamento de Milhares de Homens —
+            Se já te aconteceu de <span className="glow-text text-[#3ab9ff]">"falhar"</span> com a tua mulher
             <br className="hidden md:block" />
-            <span className="text-white"> e a Sua Mulher Vai Notar a Diferença</span>
+            <span className="text-white"> e ficar sem saber o que dizer no outro dia…</span>
           </h1>
 
           <p className="mt-6 max-w-2xl mx-auto text-base md:text-lg text-slate-300 fade-in-up">
-            Se você já sentiu aquela <span className="text-white font-semibold">vergonha silenciosa</span> de
-            não conseguir entregar o que sua mulher merece na cama, assista o vídeo abaixo
-            <span className="text-white font-semibold"> até o final</span>. O que você vai descobrir
-            pode mudar a forma como você se enxerga como homem — começando hoje à noite.
+            Não és o único. Acontece com mais homens do que tu imaginas — só que ninguém fala disso na conversa do bairro.
+            Vê o vídeo abaixo <span className="text-white font-semibold">até ao fim</span>. Não é longo, e o que está lá
+            mudou a vida de muito homem que já tinha quase desistido.
           </p>
 
           <div className="mt-10 flex flex-wrap items-center justify-center gap-4 text-xs text-slate-400">
-            <span className="inline-flex items-center gap-1.5"><Lock className="size-3.5" /> Compra 100% Segura</span>
+            <span className="inline-flex items-center gap-1.5"><Lock className="size-3.5" /> Pagamento seguro</span>
             <span>•</span>
-            <span className="inline-flex items-center gap-1.5"><ShieldCheck className="size-3.5" /> Garantia de 7 dias</span>
+            <span className="inline-flex items-center gap-1.5"><ShieldCheck className="size-3.5" /> 7 dias de garantia</span>
             <span>•</span>
-            <span className="inline-flex items-center gap-1.5"><Zap className="size-3.5" /> Acesso Imediato</span>
+            <span className="inline-flex items-center gap-1.5"><Zap className="size-3.5" /> Recebes na hora</span>
           </div>
         </div>
 
