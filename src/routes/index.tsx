@@ -77,12 +77,12 @@ function OfferBlock({ remaining, size = "lg" }: { remaining: number; size?: "lg"
         } ${expired ? "opacity-60 pointer-events-none" : ""}`}
       >
         <Sparkles className="size-5" />
-        {expired ? "OFERTA ENCERRADA" : "SIM! QUERO ACESSO AGORA"}
+        {expired ? "OFERTA ENCERRADA" : "QUERO ACESSO AGORA"}
       </a>
       {!expired && (
         <div className="flex flex-col items-center gap-1">
-          <p className="text-xs text-slate-300">✅ Acesso imediato após o pagamento</p>
-          <p className="text-xs text-slate-400">🔒 Compra 100% segura • Garantia de 7 dias</p>
+          <p className="text-xs text-slate-300">Acesso na hora, mal o pagamento entra</p>
+          <p className="text-xs text-slate-400">Pagamento seguro • 7 dias de garantia</p>
         </div>
       )}
     </div>
