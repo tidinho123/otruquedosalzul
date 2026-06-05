@@ -354,12 +354,12 @@ function Index() {
       <section className="relative py-20 md:py-28">
         <div className="max-w-6xl mx-auto px-5">
           <div className="text-center max-w-2xl mx-auto">
-            <p className="text-[#3ab9ff] font-semibold text-sm uppercase tracking-widest">O que você leva hoje</p>
+            <p className="text-[#3ab9ff] font-semibold text-sm uppercase tracking-widest">O que vais levar</p>
             <h2 className="mt-3 text-3xl md:text-5xl font-bold">
-              Tudo que você precisa para <span className="text-[#3ab9ff]">virar o jogo</span> em casa
+              Não é milagre. É só o que <span className="text-[#3ab9ff]">ninguém te contou</span> ainda.
             </h2>
             <p className="mt-4 text-slate-400">
-              Sem fórmulas mágicas. Apenas o passo a passo que homens de verdade estão aplicando — com discrição e resultado.
+              São hábitos e receitas simples que funcionam aqui em Angola, com o que tu tens à mão. Sem complicação.
             </p>
           </div>
 
