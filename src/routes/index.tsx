@@ -458,9 +458,9 @@ function Index() {
       <section className="relative py-20 md:py-24 bg-[#06080f]">
         <div className="max-w-3xl mx-auto px-5">
           <div className="text-center max-w-2xl mx-auto">
-            <p className="text-[#3ab9ff] font-semibold text-sm uppercase tracking-widest">Perguntas Frequentes</p>
+            <p className="text-[#3ab9ff] font-semibold text-sm uppercase tracking-widest">Perguntas que aparecem sempre</p>
             <h2 className="mt-3 text-3xl md:text-5xl font-bold">
-              Tirando suas últimas dúvidas
+              Antes de fechares a página
             </h2>
           </div>
           <div className="mt-12 space-y-4">
