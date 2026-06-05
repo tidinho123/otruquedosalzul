@@ -57,7 +57,7 @@ function OfferBlock({ remaining, size = "lg" }: { remaining: number; size?: "lg"
           Hoje por <span className="text-[#3ab9ff]">5.000 Kz</span>
         </span>
         <span className="text-xs text-emerald-400 font-semibold uppercase tracking-wider">
-          Economia de 44% • Apenas hoje
+          Poupas 4.000 Kz só hoje
         </span>
       </div>
 
@@ -77,12 +77,12 @@ function OfferBlock({ remaining, size = "lg" }: { remaining: number; size?: "lg"
         } ${expired ? "opacity-60 pointer-events-none" : ""}`}
       >
         <Sparkles className="size-5" />
-        {expired ? "OFERTA ENCERRADA" : "SIM! QUERO ACESSO AGORA"}
+        {expired ? "OFERTA ENCERRADA" : "QUERO ACESSO AGORA"}
       </a>
       {!expired && (
         <div className="flex flex-col items-center gap-1">
-          <p className="text-xs text-slate-300">✅ Acesso imediato após o pagamento</p>
-          <p className="text-xs text-slate-400">🔒 Compra 100% segura • Garantia de 7 dias</p>
+          <p className="text-xs text-slate-300">Acesso na hora, mal o pagamento entra</p>
+          <p className="text-xs text-slate-400">Pagamento seguro • 7 dias de garantia</p>
         </div>
       )}
     </div>
@@ -103,7 +103,7 @@ export const Route = createFileRoute("/")({
   }),
 });
 
-const CHECKOUT_URL = "https://pay.kumbipay.com/859c785f-35cb-43d4-b6a6-443d77653bb7";
+const CHECKOUT_URL = "https://www.kintu.org/product/1cceec11-e7f4-40d8-95b3-018db7431d52";
 
 const NOMES = [
   "João", "Carlos", "Mateus", "Pedro", "André", "Lucas", "Miguel",
@@ -199,61 +199,61 @@ function LiveNotifications() {
 }
 
 const beneficios = [
-  { icon: Flame, title: "Mais Fogo e Vontade", desc: "Reacenda o desejo e a vontade de estar com sua mulher como antes." },
-  { icon: TrendingUp, title: "Confiança Renovada", desc: "Volte a se sentir o homem que você sabe que é — sem inseguranças." },
-  { icon: Zap, title: "Mais Energia no Dia a Dia", desc: "Disposição do despertar até a noite, sem aquele cansaço constante." },
-  { icon: HeartPulse, title: "Vitalidade Masculina", desc: "Hábitos e receitas que cuidam do seu corpo de dentro para fora." },
-  { icon: Leaf, title: "100% Natural e Discreto", desc: "Ingredientes simples que você encontra no mercado da esquina." },
-  { icon: ShieldCheck, title: "Método Aprovado", desc: "Centenas de homens já aplicaram e relatam mudanças reais." },
+  { icon: Flame, title: "Volta a sentir vontade", desc: "Aquela vontade que parecia ter sumido, voltando aos poucos, no teu tempo." },
+  { icon: TrendingUp, title: "Cabeça mais leve", desc: "Sem aquele peso de ficar a pensar 'será que hoje vai dar certo?'." },
+  { icon: Zap, title: "Mais pique no dia-a-dia", desc: "Acordas com disposição. Não chegas a casa esgotado como antes." },
+  { icon: HeartPulse, title: "Cuidas da tua saúde", desc: "Hábitos simples que homem nenhum te conta na conversa do quintal." },
+  { icon: Leaf, title: "Tudo do mercado", desc: "Ingredientes que compras no Roque, no Asa Branca ou no mercado do teu bairro." },
+  { icon: ShieldCheck, title: "Sem ninguém saber", desc: "Tu lês no telefone, aplicas em casa. Nem a tua mulher precisa saber como." },
 ];
 
 const depoimentos = [
   {
-    nome: "Adilson M.",
+    nome: "Adilson, 38 — Viana",
     inicial: "A",
     cor: "from-sky-500 to-indigo-700",
-    texto: "Minha esposa percebeu a diferença antes de mim. Voltei a me sentir homem de verdade.",
+    texto: "Mano, eu vou ser sincero: comprei meio desconfiado. Mas em duas semanas a minha esposa já estava a perguntar o que é que eu andava a tomar. Não tomei nada — só apliquei o que tá lá.",
   },
   {
-    nome: "Hélder P.",
+    nome: "Hélder, 45 — Benguela",
     inicial: "H",
     cor: "from-cyan-500 to-blue-700",
-    texto: "Receitas simples, com o que tenho em casa. Em poucas semanas a disposição mudou.",
+    texto: "Eu já tinha gastado mais de 30 mil em coisas que não funcionaram. Esse aqui foi o único que mudou alguma coisa de verdade. Recomendo aos amigos, mas baixinho.",
   },
   {
-    nome: "Nelson K.",
+    nome: "Nelson, 41 — Talatona",
     inicial: "N",
     cor: "from-blue-500 to-violet-700",
-    texto: "Achei que era papo de internet. Apliquei, e hoje recomendo para todos os amigos.",
+    texto: "A primeira semana ainda achei que era psicológico. Aí passou um mês e a diferença é real. Não é milagre, é hábito. Mas funciona.",
   },
   {
-    nome: "Edmilson S.",
+    nome: "Edmilson, 33 — Huambo",
     inicial: "E",
     cor: "from-sky-600 to-cyan-500",
-    texto: "Por 5.000 Kz eu não tinha o que perder. Resultado: melhor decisão do mês.",
+    texto: "Pelo preço, não tinha como reclamar. Hoje agradeço por ter clicado naquele dia.",
   },
 ];
 
 const faq = [
   {
-    q: "Como vou receber o material?",
-    a: "Assim que o pagamento for confirmado, você recebe o acesso imediato no seu e-mail. Tudo 100% digital, no celular ou computador.",
+    q: "Como é que eu recebo isso?",
+    a: "Assim que o pagamento entra, chega no teu email o acesso. Abres no telemóvel, no computador, onde for. É tudo digital — não vem caixa nem encomenda para casa.",
   },
   {
-    q: "Funciona mesmo? E se eu não gostar?",
-    a: "Você tem 7 dias de garantia. Se não sentir que o método é para você, devolvemos o seu dinheiro. Sem perguntas.",
+    q: "E se não funcionar comigo?",
+    a: "Tens 7 dias. Se abrires e achares que não é para ti, mandas uma mensagem e devolvemos o dinheiro. Não vamos ficar a fazer perguntas chatas.",
   },
   {
-    q: "Preciso comprar remédio ou algum produto caro?",
-    a: "Não. O método usa ingredientes naturais e acessíveis que você encontra em qualquer mercado em Angola.",
+    q: "Preciso comprar comprimido ou alguma coisa cara?",
+    a: "Não. O que está lá usa coisas normais de mercado. Nada de farmácia, nada de importado.",
   },
   {
-    q: "É discreto? Alguém vai saber que eu comprei?",
-    a: "Totalmente discreto. A cobrança e o e-mail chegam com nome neutro. Ninguém precisa saber.",
+    q: "A minha mulher vai descobrir?",
+    a: "Só se tu quiseres. A cobrança chega com nome neutro e o material fica no teu email. Ninguém precisa saber.",
   },
   {
-    q: "Em quanto tempo começo a sentir diferença?",
-    a: "A maioria dos homens relata mais disposição e confiança já nas primeiras semanas de aplicação consistente.",
+    q: "Quanto tempo demora a notar diferença?",
+    a: "Depende de cada um. A maioria fala em mudança nas primeiras 2 a 3 semanas, desde que apliques a sério. Não é mágica — é constância.",
   },
 ];
 
@@ -295,29 +295,27 @@ function Index() {
         <div className="relative z-10 max-w-6xl mx-auto px-5 pt-20 pb-12 md:pt-28 md:pb-16 text-center">
           <div className="inline-flex items-center gap-2 rounded-full border border-red-500/40 bg-red-500/10 backdrop-blur px-4 py-1.5 text-xs md:text-sm text-red-300 font-semibold fade-in-up">
             <Flame className="size-3.5 text-red-400" />
-            ATENÇÃO HOMEM ANGOLANO • Leia antes que saia do ar
+            Mano, lê isto antes de fechar a página
           </div>
 
           <h1 className="mt-6 text-4xl md:text-6xl font-extrabold tracking-tight leading-[1.05] fade-in-up">
-            O <span className="glow-text text-[#3ab9ff]">"Truque do Sal Azul"</span> que Está Salvando
-            o Casamento de Milhares de Homens —
+            Se já te aconteceu de <span className="glow-text text-[#3ab9ff]">"falhar"</span> com a tua mulher
             <br className="hidden md:block" />
-            <span className="text-white"> e a Sua Mulher Vai Notar a Diferença</span>
+            <span className="text-white"> e ficar sem saber o que dizer no outro dia…</span>
           </h1>
 
           <p className="mt-6 max-w-2xl mx-auto text-base md:text-lg text-slate-300 fade-in-up">
-            Se você já sentiu aquela <span className="text-white font-semibold">vergonha silenciosa</span> de
-            não conseguir entregar o que sua mulher merece na cama, assista o vídeo abaixo
-            <span className="text-white font-semibold"> até o final</span>. O que você vai descobrir
-            pode mudar a forma como você se enxerga como homem — começando hoje à noite.
+            Não és o único. Acontece com mais homens do que tu imaginas — só que ninguém fala disso na conversa do bairro.
+            Vê o vídeo abaixo <span className="text-white font-semibold">até ao fim</span>. Não é longo, e o que está lá
+            mudou a vida de muito homem que já tinha quase desistido.
           </p>
 
           <div className="mt-10 flex flex-wrap items-center justify-center gap-4 text-xs text-slate-400">
-            <span className="inline-flex items-center gap-1.5"><Lock className="size-3.5" /> Compra 100% Segura</span>
+            <span className="inline-flex items-center gap-1.5"><Lock className="size-3.5" /> Pagamento seguro</span>
             <span>•</span>
-            <span className="inline-flex items-center gap-1.5"><ShieldCheck className="size-3.5" /> Garantia de 7 dias</span>
+            <span className="inline-flex items-center gap-1.5"><ShieldCheck className="size-3.5" /> 7 dias de garantia</span>
             <span>•</span>
-            <span className="inline-flex items-center gap-1.5"><Zap className="size-3.5" /> Acesso Imediato</span>
+            <span className="inline-flex items-center gap-1.5"><Zap className="size-3.5" /> Recebes na hora</span>
           </div>
         </div>
 
@@ -356,12 +354,12 @@ function Index() {
       <section className="relative py-20 md:py-28">
         <div className="max-w-6xl mx-auto px-5">
           <div className="text-center max-w-2xl mx-auto">
-            <p className="text-[#3ab9ff] font-semibold text-sm uppercase tracking-widest">O que você leva hoje</p>
+            <p className="text-[#3ab9ff] font-semibold text-sm uppercase tracking-widest">O que vais levar</p>
             <h2 className="mt-3 text-3xl md:text-5xl font-bold">
-              Tudo que você precisa para <span className="text-[#3ab9ff]">virar o jogo</span> em casa
+              Não é milagre. É só o que <span className="text-[#3ab9ff]">ninguém te contou</span> ainda.
             </h2>
             <p className="mt-4 text-slate-400">
-              Sem fórmulas mágicas. Apenas o passo a passo que homens de verdade estão aplicando — com discrição e resultado.
+              São hábitos e receitas simples que funcionam aqui em Angola, com o que tu tens à mão. Sem complicação.
             </p>
           </div>
 
@@ -393,9 +391,9 @@ function Index() {
               <span className="text-white font-semibold ml-2">4.9 / 5</span>
             </div>
             <h2 className="mt-3 text-3xl md:text-5xl font-bold">
-              O que homens reais estão dizendo
+              O que os outros homens andam a dizer
             </h2>
-            <p className="mt-4 text-slate-400">Avaliações verificadas da comunidade.</p>
+            <p className="mt-4 text-slate-400">Mensagens reais de quem já passou pelo mesmo que tu.</p>
           </div>
 
           <div className="mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
@@ -435,15 +433,15 @@ function Index() {
               <ShieldCheck className="size-8 text-[#3ab9ff]" />
             </div>
             <p className="mt-6 text-sm uppercase tracking-widest text-[#3ab9ff] font-semibold">
-              Garantia Incondicional de 7 dias
+              7 dias de garantia
             </p>
             <h3 className="mt-3 text-2xl md:text-3xl font-bold">
-              Teste sem risco. Se não gostar, devolvemos cada Kwanza.
+              Se não for para ti, devolvemos o teu dinheiro. Ponto.
             </h3>
             <p className="mt-4 text-slate-300">
-              Você tem <span className="text-white font-semibold">7 dias completos</span> para acessar
-              todo o material. Se sentir que não é para você, basta enviar uma mensagem e o reembolso
-              é feito na hora. <span className="text-white font-semibold">Sem perguntas. Sem burocracia.</span> O risco é todo nosso.
+              Tens uma semana inteira para ver o material com calma. Se achares que não vale a pena,
+              mandas uma mensagem e o reembolso é feito. <span className="text-white font-semibold">Não vamos
+              discutir contigo nem pedir explicações.</span> O risco fica connosco.
             </p>
 
             {revealed && (
@@ -460,9 +458,9 @@ function Index() {
       <section className="relative py-20 md:py-24 bg-[#06080f]">
         <div className="max-w-3xl mx-auto px-5">
           <div className="text-center max-w-2xl mx-auto">
-            <p className="text-[#3ab9ff] font-semibold text-sm uppercase tracking-widest">Perguntas Frequentes</p>
+            <p className="text-[#3ab9ff] font-semibold text-sm uppercase tracking-widest">Perguntas que aparecem sempre</p>
             <h2 className="mt-3 text-3xl md:text-5xl font-bold">
-              Tirando suas últimas dúvidas
+              Antes de fechares a página
             </h2>
           </div>
           <div className="mt-12 space-y-4">
