@@ -391,9 +391,9 @@ function Index() {
               <span className="text-white font-semibold ml-2">4.9 / 5</span>
             </div>
             <h2 className="mt-3 text-3xl md:text-5xl font-bold">
-              O que homens reais estão dizendo
+              O que os outros homens andam a dizer
             </h2>
-            <p className="mt-4 text-slate-400">Avaliações verificadas da comunidade.</p>
+            <p className="mt-4 text-slate-400">Mensagens reais de quem já passou pelo mesmo que tu.</p>
           </div>
 
           <div className="mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
