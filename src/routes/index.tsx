@@ -103,7 +103,7 @@ export const Route = createFileRoute("/")({
   }),
 });
 
-const CHECKOUT_URL = "https://pay.kumbipay.com/859c785f-35cb-43d4-b6a6-443d77653bb7";
+const CHECKOUT_URL = "https://www.kintu.org/product/1cceec11-e7f4-40d8-95b3-018db7431d52";
 
 const NOMES = [
   "João", "Carlos", "Mateus", "Pedro", "André", "Lucas", "Miguel",
