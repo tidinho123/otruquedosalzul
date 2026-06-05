@@ -433,15 +433,15 @@ function Index() {
               <ShieldCheck className="size-8 text-[#3ab9ff]" />
             </div>
             <p className="mt-6 text-sm uppercase tracking-widest text-[#3ab9ff] font-semibold">
-              Garantia Incondicional de 7 dias
+              7 dias de garantia
             </p>
             <h3 className="mt-3 text-2xl md:text-3xl font-bold">
-              Teste sem risco. Se não gostar, devolvemos cada Kwanza.
+              Se não for para ti, devolvemos o teu dinheiro. Ponto.
             </h3>
             <p className="mt-4 text-slate-300">
-              Você tem <span className="text-white font-semibold">7 dias completos</span> para acessar
-              todo o material. Se sentir que não é para você, basta enviar uma mensagem e o reembolso
-              é feito na hora. <span className="text-white font-semibold">Sem perguntas. Sem burocracia.</span> O risco é todo nosso.
+              Tens uma semana inteira para ver o material com calma. Se achares que não vale a pena,
+              mandas uma mensagem e o reembolso é feito. <span className="text-white font-semibold">Não vamos
+              discutir contigo nem pedir explicações.</span> O risco fica connosco.
             </p>
 
             {revealed && (
