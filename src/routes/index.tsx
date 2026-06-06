@@ -212,19 +212,19 @@ const depoimentos = [
     nome: "Adilson, 38 — Viana",
     inicial: "A",
     cor: "from-sky-500 to-indigo-700",
-    texto: "Mano, vou ser sincero: já estava a pensar que era da idade. Comprei mais por desespero. Em 12 dias a minha mulher perguntou-me 'o que é que se passa contigo?'. Não contei nada. Deixei ela achar que era amor.",
+    texto: "Mano, vou ser sincero: já estava a pensar que era da idade. Comprei mais por desespero. Em 12 dias ela perguntou-me 'o que é que se passa contigo?'. Não contei nada. Deixei ela achar que era amor.",
   },
   {
     nome: "Hélder, 45 — Benguela",
     inicial: "H",
     cor: "from-cyan-500 to-blue-700",
-    texto: "Já tinha gasto mais de 40 mil em comprimido azul, chá chinês, tudo. Nada funcionava direito. Isto aqui foi a primeira coisa que mudou alguma coisa a sério. Hoje a minha mulher pensa que eu tenho outra — é tudo dela.",
+    texto: "Já tinha gasto mais de 40 mil em comprimido azul, chá chinês, tudo. Nada funcionava direito. Isto aqui foi a primeira coisa que mudou alguma coisa a sério. Hoje ela pensa que eu tenho outra — é tudo dela.",
   },
   {
     nome: "Nelson, 41 — Talatona",
     inicial: "N",
     cor: "from-blue-500 to-violet-700",
-    texto: "Eu evitava ir cedo para a cama, fingia trabalho no telemóvel. Tinha vergonha de olhar para ela. Hoje sou eu que apago a luz primeiro. A minha mulher voltou a sorrir de manhã. Isso não tem preço.",
+    texto: "Eu evitava ir cedo para a cama, fingia trabalho no telemóvel. Tinha vergonha de olhar para ela. Hoje sou eu que apago a luz primeiro. Ela voltou a sorrir de manhã. Isso não tem preço.",
   },
   {
     nome: "Edmilson, 33 — Huambo",
@@ -248,7 +248,7 @@ const faq = [
     a: "Não. O que está lá usa coisas normais de mercado. Nada de farmácia, nada de importado.",
   },
   {
-    q: "A minha mulher vai descobrir?",
+    q: "Alguém vai descobrir que eu comprei isto?",
     a: "Só se tu quiseres. A cobrança chega com nome neutro e o material fica no teu email. Ninguém precisa saber.",
   },
   {
