@@ -199,12 +199,12 @@ function LiveNotifications() {
 }
 
 const beneficios = [
-  { icon: Flame, title: "Aquele 'fogo' volta", desc: "Volta a desejar a tua mulher como nos primeiros tempos — e ela vai notar antes de ti." },
-  { icon: TrendingUp, title: "Dura o tempo que quiseres", desc: "Chega de acabar em 2 minutos e fingir que estás cansado. Agora és tu que controlas." },
+  { icon: Flame, title: "Aquele 'fogo' volta", desc: "Volta a sentir desejo como nos primeiros tempos — e ela vai notar antes mesmo de tu dizeres alguma coisa." },
+  { icon: TrendingUp, title: "Dura o tempo que quiseres", desc: "Chega de acabar em 2 minutos com ansiedade ou de gozar antes de ela sentir alguma coisa. Agora és tu que decides quando." },
   { icon: Zap, title: "Mais firme, mais cheio", desc: "Aquela rigidez de quando tinhas 20 anos. Sem comprimido, sem médico, sem vergonha." },
-  { icon: HeartPulse, title: "A tua mulher pede mais", desc: "Em vez de ela fingir sono, és tu que vais ter de pedir pausa. Vais ver." },
+  { icon: HeartPulse, title: "Ela pede mais — ou volta a pedir", desc: "Seja tua companheira de anos ou alguém novo, vais notar o olhar dela mudar. Vais ver." },
   { icon: Leaf, title: "Com coisas do mercado", desc: "Tudo o que precisas compras a 1.500 Kz no mercado do bairro. Sem farmácia, sem importado." },
-  { icon: ShieldCheck, title: "Ninguém precisa saber", desc: "Lês no telefone, fazes em casa. Nem a tua mulher percebe — só vai sentir a diferença." },
+  { icon: ShieldCheck, title: "Ninguém precisa saber", desc: "Lês no telefone, fazes em casa. Ninguém descobre — só ela vai sentir a diferença quando for a hora." },
 ];
 
 const depoimentos = [
@@ -212,19 +212,19 @@ const depoimentos = [
     nome: "Adilson, 38 — Viana",
     inicial: "A",
     cor: "from-sky-500 to-indigo-700",
-    texto: "Mano, vou ser sincero: já estava a pensar que era da idade. Comprei mais por desespero. Em 12 dias a minha mulher perguntou-me 'o que é que se passa contigo?'. Não contei nada. Deixei ela achar que era amor.",
+    texto: "Mano, vou ser sincero: já estava a pensar que era da idade. Comprei mais por desespero. Em 12 dias ela perguntou-me 'o que é que se passa contigo?'. Não contei nada. Deixei ela achar que era amor.",
   },
   {
     nome: "Hélder, 45 — Benguela",
     inicial: "H",
     cor: "from-cyan-500 to-blue-700",
-    texto: "Já tinha gasto mais de 40 mil em comprimido azul, chá chinês, tudo. Nada funcionava direito. Isto aqui foi a primeira coisa que mudou alguma coisa a sério. Hoje a minha mulher pensa que eu tenho outra — é tudo dela.",
+    texto: "Já tinha gasto mais de 40 mil em comprimido azul, chá chinês, tudo. Nada funcionava direito. Isto aqui foi a primeira coisa que mudou alguma coisa a sério. Hoje ela pensa que eu tenho outra — é tudo dela.",
   },
   {
     nome: "Nelson, 41 — Talatona",
     inicial: "N",
     cor: "from-blue-500 to-violet-700",
-    texto: "Eu evitava ir cedo para a cama, fingia trabalho no telemóvel. Tinha vergonha de olhar para ela. Hoje sou eu que apago a luz primeiro. A minha mulher voltou a sorrir de manhã. Isso não tem preço.",
+    texto: "Eu evitava ir cedo para a cama, fingia trabalho no telemóvel. Tinha vergonha de olhar para ela. Hoje sou eu que apago a luz primeiro. Ela voltou a sorrir de manhã. Isso não tem preço.",
   },
   {
     nome: "Edmilson, 33 — Huambo",
@@ -248,7 +248,7 @@ const faq = [
     a: "Não. O que está lá usa coisas normais de mercado. Nada de farmácia, nada de importado.",
   },
   {
-    q: "A minha mulher vai descobrir?",
+    q: "Alguém vai descobrir que eu comprei isto?",
     a: "Só se tu quiseres. A cobrança chega com nome neutro e o material fica no teu email. Ninguém precisa saber.",
   },
   {
@@ -295,7 +295,7 @@ function Index() {
         <div className="relative z-10 max-w-6xl mx-auto px-5 pt-20 pb-12 md:pt-28 md:pb-16 text-center">
           <div className="inline-flex items-center gap-2 rounded-full border border-red-500/40 bg-red-500/10 backdrop-blur px-4 py-1.5 text-xs md:text-sm text-red-300 font-semibold fade-in-up">
             <Flame className="size-3.5 text-red-400" />
-            Atenção: se já "falhaste" com a tua mulher, lê isto até ao fim
+            Atenção: se já sentiste o teu corpo trair-te no momento H, lê isto até ao fim
           </div>
 
           <h1 className="mt-6 text-4xl md:text-6xl font-extrabold tracking-tight leading-[1.05] fade-in-up">
@@ -305,10 +305,10 @@ function Index() {
           </h1>
 
           <p className="mt-6 max-w-2xl mx-auto text-base md:text-lg text-slate-300 fade-in-up">
-            Se já tiveste aquela noite em que o teu corpo simplesmente não respondeu — e passaste a semana inteira
-            a evitar olhar para ela — <span className="text-white font-semibold">tu não és fraco, nem velho, e não está "tudo bem"</span>.
-            Acontece com 7 em cada 10 homens em Angola, mas ninguém fala. Carrega no play abaixo
-            e vê o que muito homem anda a fazer em casa para resolver isto — sem médico, sem comprimido azul, sem ninguém saber.
+            Seja com a tua companheira de anos, com alguém novo ou mesmo sozinho — se o teu corpo já te traiu quando mais precisavas dele,
+            ou se aquela ansiedade no peito aparece antes de toda relação e arruína tudo… <span className="text-white font-semibold">tu não és fraco, nem doente, e não está "tudo bem"</span>.
+            Ejaculação precoce, ansiedade de desempenho, falta de firmeza — acontece com 7 em cada 10 homens em Angola, mas ninguém fala.
+            Carrega no play abaixo e vê o que muito homem anda a fazer em casa para resolver isto — sem médico, sem comprimido azul, sem ninguém saber.
           </p>
 
           <div className="mt-10 flex flex-wrap items-center justify-center gap-4 text-xs text-slate-400">
