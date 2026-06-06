@@ -199,12 +199,12 @@ function LiveNotifications() {
 }
 
 const beneficios = [
-  { icon: Flame, title: "Volta a sentir vontade", desc: "Aquela vontade que parecia ter sumido, voltando aos poucos, no teu tempo." },
-  { icon: TrendingUp, title: "Cabeça mais leve", desc: "Sem aquele peso de ficar a pensar 'será que hoje vai dar certo?'." },
-  { icon: Zap, title: "Mais pique no dia-a-dia", desc: "Acordas com disposição. Não chegas a casa esgotado como antes." },
-  { icon: HeartPulse, title: "Cuidas da tua saúde", desc: "Hábitos simples que homem nenhum te conta na conversa do quintal." },
-  { icon: Leaf, title: "Tudo do mercado", desc: "Ingredientes que compras no Roque, no Asa Branca ou no mercado do teu bairro." },
-  { icon: ShieldCheck, title: "Sem ninguém saber", desc: "Tu lês no telefone, aplicas em casa. Nem a tua mulher precisa saber como." },
+  { icon: Flame, title: "Aquele 'fogo' volta", desc: "Volta a desejar a tua mulher como nos primeiros tempos — e ela vai notar antes de ti." },
+  { icon: TrendingUp, title: "Dura o tempo que quiseres", desc: "Chega de acabar em 2 minutos e fingir que estás cansado. Agora és tu que controlas." },
+  { icon: Zap, title: "Mais firme, mais cheio", desc: "Aquela rigidez de quando tinhas 20 anos. Sem comprimido, sem médico, sem vergonha." },
+  { icon: HeartPulse, title: "A tua mulher pede mais", desc: "Em vez de ela fingir sono, és tu que vais ter de pedir pausa. Vais ver." },
+  { icon: Leaf, title: "Com coisas do mercado", desc: "Tudo o que precisas compras a 1.500 Kz no mercado do bairro. Sem farmácia, sem importado." },
+  { icon: ShieldCheck, title: "Ninguém precisa saber", desc: "Lês no telefone, fazes em casa. Nem a tua mulher percebe — só vai sentir a diferença." },
 ];
 
 const depoimentos = [
@@ -212,25 +212,25 @@ const depoimentos = [
     nome: "Adilson, 38 — Viana",
     inicial: "A",
     cor: "from-sky-500 to-indigo-700",
-    texto: "Mano, eu vou ser sincero: comprei meio desconfiado. Mas em duas semanas a minha esposa já estava a perguntar o que é que eu andava a tomar. Não tomei nada — só apliquei o que tá lá.",
+    texto: "Mano, vou ser sincero: já estava a pensar que era da idade. Comprei mais por desespero. Em 12 dias a minha mulher perguntou-me 'o que é que se passa contigo?'. Não contei nada. Deixei ela achar que era amor.",
   },
   {
     nome: "Hélder, 45 — Benguela",
     inicial: "H",
     cor: "from-cyan-500 to-blue-700",
-    texto: "Eu já tinha gastado mais de 30 mil em coisas que não funcionaram. Esse aqui foi o único que mudou alguma coisa de verdade. Recomendo aos amigos, mas baixinho.",
+    texto: "Já tinha gasto mais de 40 mil em comprimido azul, chá chinês, tudo. Nada funcionava direito. Isto aqui foi a primeira coisa que mudou alguma coisa a sério. Hoje a minha mulher pensa que eu tenho outra — é tudo dela.",
   },
   {
     nome: "Nelson, 41 — Talatona",
     inicial: "N",
     cor: "from-blue-500 to-violet-700",
-    texto: "A primeira semana ainda achei que era psicológico. Aí passou um mês e a diferença é real. Não é milagre, é hábito. Mas funciona.",
+    texto: "Eu evitava ir cedo para a cama, fingia trabalho no telemóvel. Tinha vergonha de olhar para ela. Hoje sou eu que apago a luz primeiro. A minha mulher voltou a sorrir de manhã. Isso não tem preço.",
   },
   {
     nome: "Edmilson, 33 — Huambo",
     inicial: "E",
     cor: "from-sky-600 to-cyan-500",
-    texto: "Pelo preço, não tinha como reclamar. Hoje agradeço por ter clicado naquele dia.",
+    texto: "Por 5 mil kwanzas? Mano, gasto mais que isso numa cerveja com os amigos. Salvou o meu casamento. Não tenho mais nada a dizer.",
   },
 ];
 
@@ -295,19 +295,20 @@ function Index() {
         <div className="relative z-10 max-w-6xl mx-auto px-5 pt-20 pb-12 md:pt-28 md:pb-16 text-center">
           <div className="inline-flex items-center gap-2 rounded-full border border-red-500/40 bg-red-500/10 backdrop-blur px-4 py-1.5 text-xs md:text-sm text-red-300 font-semibold fade-in-up">
             <Flame className="size-3.5 text-red-400" />
-            Mano, lê isto antes de fechar a página
+            Atenção: se já "falhaste" com a tua mulher, lê isto até ao fim
           </div>
 
           <h1 className="mt-6 text-4xl md:text-6xl font-extrabold tracking-tight leading-[1.05] fade-in-up">
-            Se já te aconteceu de <span className="glow-text text-[#3ab9ff]">"falhar"</span> com a tua mulher
+            "Acabei em <span className="glow-text text-[#3ab9ff]">2 minutos</span> e vi a cara dela mudar…
             <br className="hidden md:block" />
-            <span className="text-white"> e ficar sem saber o que dizer no outro dia…</span>
+            <span className="text-white"> nunca mais quero passar por isso."</span>
           </h1>
 
           <p className="mt-6 max-w-2xl mx-auto text-base md:text-lg text-slate-300 fade-in-up">
-            Não és o único. Acontece com mais homens do que tu imaginas — só que ninguém fala disso na conversa do bairro.
-            Vê o vídeo abaixo <span className="text-white font-semibold">até ao fim</span>. Não é longo, e o que está lá
-            mudou a vida de muito homem que já tinha quase desistido.
+            Se já tiveste aquela noite em que o teu corpo simplesmente não respondeu — e passaste a semana inteira
+            a evitar olhar para ela — <span className="text-white font-semibold">tu não és fraco, nem velho, e não está "tudo bem"</span>.
+            Acontece com 7 em cada 10 homens em Angola, mas ninguém fala. Carrega no play abaixo
+            e vê o que muito homem anda a fazer em casa para resolver isto — sem médico, sem comprimido azul, sem ninguém saber.
           </p>
 
           <div className="mt-10 flex flex-wrap items-center justify-center gap-4 text-xs text-slate-400">
