@@ -199,12 +199,12 @@ function LiveNotifications() {
 }
 
 const beneficios = [
-  { icon: Flame, title: "Aquele 'fogo' volta", desc: "Volta a desejar a tua mulher como nos primeiros tempos — e ela vai notar antes de ti." },
-  { icon: TrendingUp, title: "Dura o tempo que quiseres", desc: "Chega de acabar em 2 minutos e fingir que estás cansado. Agora és tu que controlas." },
+  { icon: Flame, title: "Aquele 'fogo' volta", desc: "Volta a sentir desejo como nos primeiros tempos — e ela vai notar antes mesmo de tu dizeres alguma coisa." },
+  { icon: TrendingUp, title: "Dura o tempo que quiseres", desc: "Chega de acabar em 2 minutos com ansiedade ou de gozar antes de ela sentir alguma coisa. Agora és tu que decides quando." },
   { icon: Zap, title: "Mais firme, mais cheio", desc: "Aquela rigidez de quando tinhas 20 anos. Sem comprimido, sem médico, sem vergonha." },
-  { icon: HeartPulse, title: "A tua mulher pede mais", desc: "Em vez de ela fingir sono, és tu que vais ter de pedir pausa. Vais ver." },
+  { icon: HeartPulse, title: "Ela pede mais — ou volta a pedir", desc: "Seja tua companheira de anos ou alguém novo, vais notar o olhar dela mudar. Vais ver." },
   { icon: Leaf, title: "Com coisas do mercado", desc: "Tudo o que precisas compras a 1.500 Kz no mercado do bairro. Sem farmácia, sem importado." },
-  { icon: ShieldCheck, title: "Ninguém precisa saber", desc: "Lês no telefone, fazes em casa. Nem a tua mulher percebe — só vai sentir a diferença." },
+  { icon: ShieldCheck, title: "Ninguém precisa saber", desc: "Lês no telefone, fazes em casa. Ninguém descobre — só ela vai sentir a diferença quando for a hora." },
 ];
 
 const depoimentos = [
