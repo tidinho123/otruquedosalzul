@@ -305,10 +305,10 @@ function Index() {
           </h1>
 
           <p className="mt-6 max-w-2xl mx-auto text-base md:text-lg text-slate-300 fade-in-up">
-            Se já tiveste aquela noite em que o teu corpo simplesmente não respondeu — e passaste a semana inteira
-            a evitar olhar para ela — <span className="text-white font-semibold">tu não és fraco, nem velho, e não está "tudo bem"</span>.
-            Acontece com 7 em cada 10 homens em Angola, mas ninguém fala. Carrega no play abaixo
-            e vê o que muito homem anda a fazer em casa para resolver isto — sem médico, sem comprimido azul, sem ninguém saber.
+            Seja com a tua companheira de anos, com alguém novo ou mesmo sozinho — se o teu corpo já te traiu quando mais precisavas dele,
+            ou se aquela ansiedade no peito aparece antes de toda relação e arruína tudo… <span className="text-white font-semibold">tu não és fraco, nem doente, e não está "tudo bem"</span>.
+            Ejaculação precoce, ansiedade de desempenho, falta de firmeza — acontece com 7 em cada 10 homens em Angola, mas ninguém fala.
+            Carrega no play abaixo e vê o que muito homem anda a fazer em casa para resolver isto — sem médico, sem comprimido azul, sem ninguém saber.
           </p>
 
           <div className="mt-10 flex flex-wrap items-center justify-center gap-4 text-xs text-slate-400">
