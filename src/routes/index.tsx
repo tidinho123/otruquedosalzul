@@ -295,7 +295,7 @@ function Index() {
         <div className="relative z-10 max-w-6xl mx-auto px-5 pt-20 pb-12 md:pt-28 md:pb-16 text-center">
           <div className="inline-flex items-center gap-2 rounded-full border border-red-500/40 bg-red-500/10 backdrop-blur px-4 py-1.5 text-xs md:text-sm text-red-300 font-semibold fade-in-up">
             <Flame className="size-3.5 text-red-400" />
-            Atenção: se já sentiste o teu corpo trair-te no momento H, lê isto até ao fim
+            Atenção: se já acabaste antes do tempo ou sentiste que "faltou alguma coisa", lê isto até ao fim
           </div>
 
           <h1 className="mt-6 text-4xl md:text-6xl font-extrabold tracking-tight leading-[1.05] fade-in-up">
@@ -305,10 +305,10 @@ function Index() {
           </h1>
 
           <p className="mt-6 max-w-2xl mx-auto text-base md:text-lg text-slate-300 fade-in-up">
-            Seja com a tua companheira de anos, com alguém novo ou mesmo sozinho — se o teu corpo já te traiu quando mais precisavas dele,
-            ou se aquela ansiedade no peito aparece antes de toda relação e arruína tudo… <span className="text-white font-semibold">tu não és fraco, nem doente, e não está "tudo bem"</span>.
-            Ejaculação precoce, ansiedade de desempenho, falta de firmeza — acontece com 7 em cada 10 homens em Angola, mas ninguém fala.
-            Carrega no play abaixo e vê o que muito homem anda a fazer em casa para resolver isto — sem médico, sem comprimido azul, sem ninguém saber.
+            Acabar à pressa, sentir que ficou a desejar, ver o olhar dela mudar no meio da relação… isso destrói qualquer homem por dentro.
+            E o pior: <span className="text-white font-semibold">quanto mais tu pensas nisso, pior fica</span>. Vira ansiedade, vira evitar a cama, vira desculpa de "estou cansado".
+            Mas a verdade é que <span className="text-white font-semibold">isto tem solução — e não passa por comprimido azul, médico ou conversa com ninguém</span>.
+            Carrega no play abaixo e vê o que muito homem aqui em Angola anda a fazer em casa para durar mais e voltar a sentir-se homem na hora H.
           </p>
 
           <div className="mt-10 flex flex-wrap items-center justify-center gap-4 text-xs text-slate-400">
