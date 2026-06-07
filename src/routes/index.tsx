@@ -103,7 +103,7 @@ export const Route = createFileRoute("/")({
   }),
 });
 
-const CHECKOUT_URL = "https://www.kintu.org/product/1cceec11-e7f4-40d8-95b3-018db7431d52";
+const CHECKOUT_URL = "https://pay.kursinha.com/c/6a242b9ce4492a7f37ba9430";
 
 const NOMES = [
   "João", "Carlos", "Mateus", "Pedro", "André", "Lucas", "Miguel",
@@ -199,12 +199,12 @@ function LiveNotifications() {
 }
 
 const beneficios = [
-  { icon: Flame, title: "Aquele 'fogo' volta", desc: "Volta a sentir desejo como nos primeiros tempos — e ela vai notar antes mesmo de tu dizeres alguma coisa." },
-  { icon: TrendingUp, title: "Dura o tempo que quiseres", desc: "Chega de acabar em 2 minutos com ansiedade ou de gozar antes de ela sentir alguma coisa. Agora és tu que decides quando." },
-  { icon: Zap, title: "Mais firme, mais cheio", desc: "Aquela rigidez de quando tinhas 20 anos. Sem comprimido, sem médico, sem vergonha." },
-  { icon: HeartPulse, title: "Ela pede mais — ou volta a pedir", desc: "Seja tua companheira de anos ou alguém novo, vais notar o olhar dela mudar. Vais ver." },
-  { icon: Leaf, title: "Com coisas do mercado", desc: "Tudo o que precisas compras a 1.500 Kz no mercado do bairro. Sem farmácia, sem importado." },
-  { icon: ShieldCheck, title: "Ninguém precisa saber", desc: "Lês no telefone, fazes em casa. Ninguém descobre — só ela vai sentir a diferença quando for a hora." },
+  { icon: TrendingUp, title: "Mais tempo na hora H", desc: "Técnicas e hábitos simples que homens em Angola estão a usar para não acabar à pressa — e finalmente sentir o que é levar até ao fim com calma." },
+  { icon: Zap, title: "Mais firmeza, mais presença", desc: "Trabalha o que muita gente ignora: circulação, respiração e controlo. O resultado fala por si — e ela vai sentir antes de tu dizeres alguma coisa." },
+  { icon: Flame, title: "Aquele 'fogo' que tinhas voltou", desc: "Volta o desejo, volta a confiança. Sem ansiedade no peito antes de cada relação." },
+  { icon: HeartPulse, title: "Ela vai querer mais — ou voltar a querer", desc: "Seja tua companheira de anos ou alguém novo, o olhar dela muda. Sem ter que dizer uma palavra." },
+  { icon: Leaf, title: "Só com coisas de mercado", desc: "Receitas e hábitos com ingredientes que se compram a 1.500 Kz no mercado do bairro. Sem farmácia, sem importado, sem comprimido azul." },
+  { icon: ShieldCheck, title: "Ninguém precisa de saber", desc: "Lês no telefone, fazes em casa. Discreto do início ao fim — só ela vai sentir a diferença quando for a hora." },
 ];
 
 const depoimentos = [
