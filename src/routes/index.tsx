@@ -272,8 +272,32 @@ function Index() {
   }, []);
 
   return (
-    <div className="relative min-h-screen overflow-x-hidden bg-[#04060d] text-slate-100">
+    <div className="relative min-h-screen overflow-x-hidden bg-[#04060d] text-slate-100 pb-24 md:pb-24">
       <LiveNotifications />
+
+      {/* STICKY CTA — sempre visível depois do scroll */}
+      {showStickyCTA && (
+        <div className="fixed bottom-0 left-0 right-0 z-40 border-t border-[#1b2742] bg-[#04060d]/95 backdrop-blur-md px-4 py-3 md:py-4 shadow-[0_-10px_30px_rgba(0,0,0,0.5)]">
+          <div className="max-w-3xl mx-auto flex items-center justify-between gap-3">
+            <div className="flex flex-col leading-tight">
+              <span className="text-[10px] md:text-xs text-slate-400 line-through">9.000 Kz</span>
+              <span className="text-base md:text-lg font-extrabold text-white">
+                Hoje <span className="text-[#3ab9ff]">5.000 Kz</span>
+              </span>
+              <span className="hidden md:inline text-[10px] text-emerald-400 font-semibold uppercase tracking-wider">
+                Expira em {formatMMSS(remaining)}
+              </span>
+            </div>
+            <a
+              href={CHECKOUT_URL}
+              className="btn-cta inline-flex items-center justify-center gap-2 rounded-xl bg-gradient-to-b from-[#3ab9ff] to-[#0077ff] text-white font-extrabold tracking-wide px-5 py-3 md:px-8 md:py-4 text-sm md:text-base shadow-[0_10px_30px_rgba(58,185,255,0.45)] transition-transform hover:scale-[1.03]"
+            >
+              <Sparkles className="size-4 md:size-5" />
+              QUERO AGORA
+            </a>
+          </div>
+        </div>
+      )}
 
       {/* HERO */}
       <section className="relative isolate overflow-hidden">
