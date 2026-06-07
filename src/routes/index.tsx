@@ -258,46 +258,30 @@ const faq = [
 ];
 
 function Index() {
-  // Mostrar a oferta imediatamente — não esperar pelo fim do vídeo.
-  // (Esperar matava a conversão: lead saía antes de ver o preço/CTA.)
-  const { revealed, remaining } = useOfferReveal(true);
+  const [videoEnded, setVideoEnded] = useState(false);
+  const { revealed, remaining } = useOfferReveal(videoEnded);
   const iframeRef = useRef<HTMLIFrameElement>(null);
-  const [showStickyCTA, setShowStickyCTA] = useState(false);
 
   useEffect(() => {
-    const onScroll = () => setShowStickyCTA(window.scrollY > 400);
-    window.addEventListener("scroll", onScroll, { passive: true });
-    onScroll();
-    return () => window.removeEventListener("scroll", onScroll);
+    if (!iframeRef.current) return;
+    const player = new Player(iframeRef.current);
+    const onEnded = () => setVideoEnded(true);
+    const onTime = (data: { seconds: number; duration: number }) => {
+      if (data.duration > 0 && data.seconds >= Math.min(data.duration - 1, REVEAL_DELAY_MS / 1000)) {
+        setVideoEnded(true);
+      }
+    };
+    player.on("ended", onEnded);
+    player.on("timeupdate", onTime);
+    return () => {
+      player.off("ended", onEnded);
+      player.off("timeupdate", onTime);
+    };
   }, []);
 
   return (
-    <div className="relative min-h-screen overflow-x-hidden bg-[#04060d] text-slate-100 pb-24 md:pb-24">
+    <div className="relative min-h-screen overflow-x-hidden bg-[#04060d] text-slate-100">
       <LiveNotifications />
-
-      {/* STICKY CTA — sempre visível depois do scroll */}
-      {showStickyCTA && (
-        <div className="fixed bottom-0 left-0 right-0 z-40 border-t border-[#1b2742] bg-[#04060d]/95 backdrop-blur-md px-4 py-3 md:py-4 shadow-[0_-10px_30px_rgba(0,0,0,0.5)]">
-          <div className="max-w-3xl mx-auto flex items-center justify-between gap-3">
-            <div className="flex flex-col leading-tight">
-              <span className="text-[10px] md:text-xs text-slate-400 line-through">9.000 Kz</span>
-              <span className="text-base md:text-lg font-extrabold text-white">
-                Hoje <span className="text-[#3ab9ff]">5.000 Kz</span>
-              </span>
-              <span className="hidden md:inline text-[10px] text-emerald-400 font-semibold uppercase tracking-wider">
-                Expira em {formatMMSS(remaining)}
-              </span>
-            </div>
-            <a
-              href={CHECKOUT_URL}
-              className="btn-cta inline-flex items-center justify-center gap-2 rounded-xl bg-gradient-to-b from-[#3ab9ff] to-[#0077ff] text-white font-extrabold tracking-wide px-5 py-3 md:px-8 md:py-4 text-sm md:text-base shadow-[0_10px_30px_rgba(58,185,255,0.45)] transition-transform hover:scale-[1.03]"
-            >
-              <Sparkles className="size-4 md:size-5" />
-              QUERO AGORA
-            </a>
-          </div>
-        </div>
-      )}
 
       {/* HERO */}
       <section className="relative isolate overflow-hidden">
@@ -308,20 +292,23 @@ function Index() {
         <div className="relative z-10 max-w-6xl mx-auto px-5 pt-20 pb-12 md:pt-28 md:pb-16 text-center">
           <div className="inline-flex items-center gap-2 rounded-full border border-red-500/40 bg-red-500/10 backdrop-blur px-4 py-1.5 text-xs md:text-sm text-red-300 font-semibold fade-in-up">
             <Flame className="size-3.5 text-red-400" />
-            Atenção: se já acabaste antes do tempo ou sentiste que "faltou alguma coisa", lê isto até ao fim
+            Se já te apagaste antes do tempo e fingiste que não foi nada — este vídeo é para ti
           </div>
 
           <h1 className="mt-6 text-4xl md:text-6xl font-extrabold tracking-tight leading-[1.05] fade-in-up">
             "Acabei em <span className="glow-text text-[#3ab9ff]">2 minutos</span> e vi a cara dela mudar…
             <br className="hidden md:block" />
-            <span className="text-white"> nunca mais quero passar por isso."</span>
+            <span className="text-white"> jurei que nunca mais ia passar por isso."</span>
           </h1>
 
           <p className="mt-6 max-w-2xl mx-auto text-base md:text-lg text-slate-300 fade-in-up">
-            Acabar à pressa, sentir que ficou a desejar, ver o olhar dela mudar no meio da relação… isso destrói qualquer homem por dentro.
-            E o pior: <span className="text-white font-semibold">quanto mais tu pensas nisso, pior fica</span>. Vira ansiedade, vira evitar a cama, vira desculpa de "estou cansado".
-            Mas a verdade é que <span className="text-white font-semibold">isto tem solução — e não passa por comprimido azul, médico ou conversa com ninguém</span>.
-            Carrega no play abaixo e vê o que muito homem aqui em Angola anda a fazer em casa para durar mais e voltar a sentir-se homem na hora H.
+            Tu sabes daquele silêncio depois. Ela vira-se para o lado, tu ficas a olhar para o tecto e
+            <span className="text-white font-semibold"> por dentro arde aquela sensação de que falhaste outra vez</span>.
+            Na próxima já entras com medo — e o medo é exactamente o que te faz acabar ainda mais rápido. Um ciclo que parece não ter saída.
+            <br className="hidden md:block" />
+            <br className="hidden md:block" />
+            A boa notícia: <span className="text-white font-semibold">milhares de homens aqui em Angola já saíram desse buraco</span> sem comprimido azul, sem médico, sem contar a ninguém.
+            Carrega no play e vê o que estão a fazer em casa para durar o tempo que quiserem — e fazer ela pedir para parar.
           </p>
 
           <div className="mt-10 flex flex-wrap items-center justify-center gap-4 text-xs text-slate-400">
