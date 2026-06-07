@@ -258,28 +258,17 @@ const faq = [
 ];
 
 function Index() {
-  const [shouldReveal, setShouldReveal] = useState(false);
-  const { revealed, remaining } = useOfferReveal(shouldReveal);
+  // Mostrar a oferta imediatamente — não esperar pelo fim do vídeo.
+  // (Esperar matava a conversão: lead saía antes de ver o preço/CTA.)
+  const { revealed, remaining } = useOfferReveal(true);
   const iframeRef = useRef<HTMLIFrameElement>(null);
+  const [showStickyCTA, setShowStickyCTA] = useState(false);
 
   useEffect(() => {
-    if (!iframeRef.current) return;
-    const player = new Player(iframeRef.current);
-    let duration = 0;
-    player.getDuration().then((d) => {
-      duration = d;
-    }).catch(() => {});
-    const onTime = ({ seconds }: { seconds: number }) => {
-      if (duration > 0 && duration - seconds <= 10) {
-        setShouldReveal(true);
-      }
-    };
-    player.on("timeupdate", onTime);
-    player.on("ended", () => setShouldReveal(true));
-    return () => {
-      player.off("timeupdate", onTime);
-      player.destroy().catch(() => {});
-    };
+    const onScroll = () => setShowStickyCTA(window.scrollY > 400);
+    window.addEventListener("scroll", onScroll, { passive: true });
+    onScroll();
+    return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
   return (
