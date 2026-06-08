@@ -179,7 +179,7 @@ function Index() {
     const player = new Player(iframeRef.current);
     const onEnded = () => setVideoEnded(true);
     const onTime = (data: { seconds: number; duration: number }) => {
-      if (data.duration > 0 && data.seconds >= Math.min(data.duration - 1, REVEAL_DELAY_MS / 1000)) {
+      if (data.duration > 0 && data.seconds >= data.duration - 10) {
         setVideoEnded(true);
       }
     };
