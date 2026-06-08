@@ -47,7 +47,7 @@ function useSalesNotifications() {
         city: ANGOLA_CITIES[Math.floor(Math.random() * ANGOLA_CITIES.length)],
       });
     };
-    const i = setInterval(trigger, 10000);
+    const i = setInterval(trigger, 40000);
     const t = setTimeout(trigger, 2500);
     return () => {
       clearInterval(i);
