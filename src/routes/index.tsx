@@ -1,10 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { useEffect, useState } from "react";
-import { Sparkles, Clock, Users, ShoppingBag } from "lucide-react";
-
-const OFFER_DURATION_MS = 10 * 60 * 1000;
-const REVEAL_DELAY_MS = 6 * 60 * 1000;
-const CHECKOUT_URL = "https://pay.kursinha.com/c/6a242b9ce4492a7f37ba9430";
+import { Users, ShoppingBag } from "lucide-react";
 
 const ANGOLA_NAMES = [
   "João M.", "Domingos K.", "Pedro A.", "Mateus L.", "Augusto F.",
@@ -94,68 +90,6 @@ function SalesToast({ notif }: { notif: Notif | null }) {
   );
 }
 
-function useOfferReveal(triggerReveal: boolean) {
-  const [revealed, setRevealed] = useState(false);
-  const [revealAt, setRevealAt] = useState<number | null>(null);
-  const [now, setNow] = useState(() => Date.now());
-
-  useEffect(() => {
-    if (triggerReveal && !revealed) {
-      setRevealed(true);
-      setRevealAt(Date.now());
-    }
-  }, [triggerReveal, revealed]);
-
-  useEffect(() => {
-    if (!revealed) return;
-    const i = setInterval(() => setNow(Date.now()), 1000);
-    return () => clearInterval(i);
-  }, [revealed]);
-
-  const remaining = revealAt ? Math.max(0, OFFER_DURATION_MS - (now - revealAt)) : OFFER_DURATION_MS;
-  return { revealed, remaining };
-}
-
-function formatMMSS(ms: number) {
-  const total = Math.floor(ms / 1000);
-  const m = Math.floor(total / 60).toString().padStart(2, "0");
-  const s = (total % 60).toString().padStart(2, "0");
-  return `${m}:${s}`;
-}
-
-function OfferBlock({ remaining }: { remaining: number }) {
-  const expired = remaining <= 0;
-  return (
-    <div className="fade-in-up mt-2 flex flex-col items-center gap-4 w-full">
-      <div className="flex flex-col items-center gap-1">
-        <span className="text-sm md:text-base text-slate-400 line-through">De 9.000 Kz</span>
-        <span className="text-3xl md:text-5xl font-extrabold text-white glow-text">
-          Hoje por <span className="text-[#3ab9ff]">5.000 Kz</span>
-        </span>
-      </div>
-
-      <div className="inline-flex items-center gap-2 rounded-xl border border-[#3ab9ff]/40 bg-[#0a0f1f]/80 backdrop-blur px-4 py-2 text-sm md:text-base">
-        <Clock className="size-4 text-[#3ab9ff]" />
-        <span className="text-slate-300">Esta oferta expira em</span>
-        <span className="font-mono font-bold text-[#3ab9ff] tabular-nums tracking-wider text-lg">
-          {formatMMSS(remaining)}
-        </span>
-      </div>
-
-      <a
-        href={expired ? "#" : CHECKOUT_URL}
-        aria-disabled={expired}
-        className={`btn-cta inline-flex items-center justify-center gap-2 rounded-xl bg-gradient-to-b from-[#3ab9ff] to-[#0077ff] text-white font-extrabold tracking-wide transition-transform hover:scale-[1.03] shadow-[0_10px_40px_rgba(58,185,255,0.45)] px-10 py-5 text-lg md:text-xl ${
-          expired ? "opacity-60 pointer-events-none" : ""
-        }`}
-      >
-        <Sparkles className="size-5" />
-        {expired ? "OFERTA ENCERRADA" : "QUERO ACESSO AGORA"}
-      </a>
-    </div>
-  );
-}
-
 export const Route = createFileRoute("/")({
   component: Index,
   head: () => ({
@@ -167,19 +101,8 @@ export const Route = createFileRoute("/")({
 });
 
 function Index() {
-  const [videoEnded, setVideoEnded] = useState(false);
-  const { revealed, remaining } = useOfferReveal(videoEnded);
   const viewers = useLiveViewers();
   const notif = useSalesNotifications();
-
-  useEffect(() => {
-    const s = document.createElement("script");
-    s.src = "https://scripts.converteai.net/lib/js/smartplayer-wc/v4/sdk.js";
-    s.async = true;
-    document.head.appendChild(s);
-    const t = setTimeout(() => setVideoEnded(true), REVEAL_DELAY_MS);
-    return () => clearTimeout(t);
-  }, []);
 
   return (
     <div className="relative min-h-screen overflow-x-hidden bg-[#04060d] text-slate-100">
@@ -202,13 +125,6 @@ function Index() {
               />
             </div>
           </div>
-
-
-          {revealed && (
-            <div className="mt-10 flex justify-center">
-              <OfferBlock remaining={remaining} />
-            </div>
-          )}
         </div>
 
         <SalesToast notif={notif} />
