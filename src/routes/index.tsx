@@ -100,6 +100,29 @@ export const Route = createFileRoute("/")({
   }),
 });
 
+function VslPlayer() {
+  useEffect(() => {
+    const wrapper = document.getElementById("ifr_6a5975e72f1742aeb47bda4a_wrapper");
+    if (!wrapper) return;
+    wrapper.innerHTML = `<div style="position: relative; padding: 196.2962962962963% 0 0 0;" id="ifr_6a5975e72f1742aeb47bda4a_aspect"><iframe frameborder="0" allowfullscreen src="about:blank" id="ifr_6a5975e72f1742aeb47bda4a" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;" referrerpolicy="origin" onload="this.onload=null, this.src='https://scripts.converteai.net/dc9cda6f-deb3-40d3-9c45-9f5c791bcef7/players/6a5975e72f1742aeb47bda4a/v4/embed.html'+(location.search||'?')+'&vl='+encodeURIComponent(location.href)"></iframe></div>`;
+
+    if (!document.querySelector('script[data-smartplayer-sdk]')) {
+      const s = document.createElement("script");
+      s.src = "https://scripts.converteai.net/lib/js/smartplayer-wc/v4/sdk.js";
+      s.async = true;
+      s.setAttribute("data-smartplayer-sdk", "true");
+      document.head.appendChild(s);
+    }
+  }, []);
+
+  return (
+    <div
+      id="ifr_6a5975e72f1742aeb47bda4a_wrapper"
+      style={{ margin: "0 auto", width: "100%", maxWidth: 400 }}
+    />
+  );
+}
+
 function Index() {
   const viewers = useLiveViewers();
   const notif = useSalesNotifications();
@@ -116,15 +139,10 @@ function Index() {
           <div className="relative mx-auto rounded-2xl border-neon p-2 md:p-3 bg-[#070b16]">
             <div className="absolute -inset-0.5 rounded-2xl bg-gradient-to-r from-[#0077ff]/40 via-[#3ab9ff]/30 to-[#0077ff]/40 blur-xl -z-10" aria-hidden />
             <div className="relative w-full overflow-hidden rounded-xl bg-black">
-              <div
-                id="ifr_6a5975e72f1742aeb47bda4a_wrapper"
-                style={{ margin: "0 auto", width: "100%", maxWidth: 400 }}
-                dangerouslySetInnerHTML={{
-                  __html: `<div style="position: relative; padding: 196.2962962962963% 0 0 0;" id="ifr_6a5975e72f1742aeb47bda4a_aspect"><iframe frameborder="0" allowfullscreen src="about:blank" id="ifr_6a5975e72f1742aeb47bda4a" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;" referrerpolicy="origin" onload="this.onload=null, this.src='https://scripts.converteai.net/dc9cda6f-deb3-40d3-9c45-9f5c791bcef7/players/6a5975e72f1742aeb47bda4a/v4/embed.html'+(location.search||'?')+'&vl='+encodeURIComponent(location.href)"></iframe></div>`,
-                }}
-              />
+              <VslPlayer />
             </div>
           </div>
+
         </div>
 
         <SalesToast notif={notif} />
