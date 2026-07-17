@@ -1,6 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { useEffect, useRef, useState } from "react";
-import Player from "@vimeo/player";
+import { useEffect, useState } from "react";
 import { Sparkles, Clock, Users, ShoppingBag } from "lucide-react";
 
 const OFFER_DURATION_MS = 10 * 60 * 1000;
