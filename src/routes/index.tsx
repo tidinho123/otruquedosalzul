@@ -169,25 +169,16 @@ export const Route = createFileRoute("/")({
 function Index() {
   const [videoEnded, setVideoEnded] = useState(false);
   const { revealed, remaining } = useOfferReveal(videoEnded);
-  const iframeRef = useRef<HTMLIFrameElement>(null);
   const viewers = useLiveViewers();
   const notif = useSalesNotifications();
 
   useEffect(() => {
-    if (!iframeRef.current) return;
-    const player = new Player(iframeRef.current);
-    const onEnded = () => setVideoEnded(true);
-    const onTime = (data: { seconds: number; duration: number }) => {
-      if (data.duration > 0 && data.seconds >= data.duration - 10) {
-        setVideoEnded(true);
-      }
-    };
-    player.on("ended", onEnded);
-    player.on("timeupdate", onTime);
-    return () => {
-      player.off("ended", onEnded);
-      player.off("timeupdate", onTime);
-    };
+    const s = document.createElement("script");
+    s.src = "https://scripts.converteai.net/lib/js/smartplayer-wc/v4/sdk.js";
+    s.async = true;
+    document.head.appendChild(s);
+    const t = setTimeout(() => setVideoEnded(true), REVEAL_DELAY_MS);
+    return () => clearTimeout(t);
   }, []);
 
   return (
@@ -202,20 +193,16 @@ function Index() {
           <div className="relative mx-auto rounded-2xl border-neon p-2 md:p-3 bg-[#070b16]">
             <div className="absolute -inset-0.5 rounded-2xl bg-gradient-to-r from-[#0077ff]/40 via-[#3ab9ff]/30 to-[#0077ff]/40 blur-xl -z-10" aria-hidden />
             <div className="relative w-full overflow-hidden rounded-xl bg-black">
-              <div className="relative w-full" style={{ paddingBottom: "196.3%" }}>
-                <iframe
-                  ref={iframeRef}
-                  src="https://player.vimeo.com/video/1197000161?title=0&byline=0&portrait=0&badge=0&autopause=0&loop=1"
-                  frameBorder={0}
-                  allow="autoplay; fullscreen; picture-in-picture"
-                  allowFullScreen
-                  className="absolute inset-0 w-full h-full"
-                  style={{ border: 0 }}
-                  title="VSL"
-                />
-              </div>
+              <div
+                id="ifr_6a5975e72f1742aeb47bda4a_wrapper"
+                style={{ margin: "0 auto", width: "100%", maxWidth: 400 }}
+                dangerouslySetInnerHTML={{
+                  __html: `<div style="position: relative; padding: 196.2962962962963% 0 0 0;" id="ifr_6a5975e72f1742aeb47bda4a_aspect"><iframe frameborder="0" allowfullscreen src="about:blank" id="ifr_6a5975e72f1742aeb47bda4a" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;" referrerpolicy="origin" onload="this.onload=null, this.src='https://scripts.converteai.net/dc9cda6f-deb3-40d3-9c45-9f5c791bcef7/players/6a5975e72f1742aeb47bda4a/v4/embed.html'+(location.search||'?')+'&vl='+encodeURIComponent(location.href)"></iframe></div>`,
+                }}
+              />
             </div>
           </div>
+
 
           {revealed && (
             <div className="mt-10 flex justify-center">
